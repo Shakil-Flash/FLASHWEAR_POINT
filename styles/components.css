@@ -1,0 +1,324 @@
+/**
+ * FLASHWEAR DESIGN SYSTEM — COMPONENT ARCHETYPES & INTERACTION RULES
+ * Creative Direction: LIGHTNING STRIKE
+ * Version: 2.0.0
+ * 
+ * Reusable foundation classes establishing interaction design rules,
+ * button states, input styling, and kinetic badges for upcoming phases.
+ */
+
+/* ==========================================================================
+   1. BUTTON COMPONENT SYSTEM
+   ========================================================================== */
+
+/* Base Button Specification */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-btn);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  border: var(--border-width-hairline) solid transparent;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+  vertical-align: middle;
+  padding: 0 var(--space-6);
+  height: 44px;
+  line-height: 1;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  background-color: var(--disabled-bg) !important;
+  color: var(--disabled-text) !important;
+  border-color: var(--disabled-border) !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Primary Button: Flash Red Ignition */
+.btn-primary {
+  background-color: var(--color-flash-red);
+  color: var(--color-pure-white);
+  border-color: var(--color-flash-red);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-electric-orange);
+  border-color: var(--color-electric-orange);
+  box-shadow: var(--glow-orange);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active:not(:disabled) {
+  background-color: var(--color-flash-red);
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Secondary Button: Crimson Wireframe */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-cloud-white);
+  border-color: var(--color-deep-crimson);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  border-color: var(--color-flash-red);
+  background-color: var(--interactive-hover-bg);
+  color: var(--color-pure-white);
+  box-shadow: var(--glow-red);
+}
+
+.btn-secondary:active:not(:disabled) {
+  background-color: rgba(196, 20, 32, 0.25);
+}
+
+/* Outline Button: Subtle Hairline */
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-cloud-white);
+  border-color: var(--border-default);
+}
+
+.btn-outline:hover:not(:disabled) {
+  border-color: var(--color-cloud-white);
+  background-color: rgba(245, 245, 245, 0.06);
+}
+
+/* Ghost Button: Editorial Text Trigger */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--color-cloud-white);
+  border-color: transparent;
+  padding: 0 var(--space-2);
+  height: auto;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  color: var(--color-flash-red);
+  background-color: transparent;
+}
+
+/* Icon Button */
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-surface-base);
+  border-color: var(--border-default);
+  color: var(--color-cloud-white);
+}
+
+.btn-icon:hover:not(:disabled) {
+  border-color: var(--color-flash-red);
+  color: var(--color-flash-red);
+  box-shadow: var(--glow-red);
+}
+
+/* Sizing Modifiers */
+.btn-sm {
+  height: 34px;
+  padding: 0 var(--space-4);
+  font-size: 11px;
+}
+
+.btn-lg {
+  height: 52px;
+  padding: 0 var(--space-8);
+  font-size: 14px;
+  letter-spacing: var(--tracking-widest);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ==========================================================================
+   2. FORM CONTROLS & INPUT SPECIFICATIONS
+   ========================================================================== */
+
+.input-field,
+.search-field,
+.select-control {
+  width: 100%;
+  height: 44px;
+  background-color: var(--color-surface-base);
+  border: var(--border-width-hairline) solid var(--border-default);
+  border-radius: var(--radius-xs);
+  padding: 0 var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-body-base);
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.input-field::placeholder,
+.search-field::placeholder {
+  color: var(--text-muted);
+}
+
+.input-field:hover,
+.search-field:hover,
+.select-control:hover {
+  border-color: var(--border-crimson);
+}
+
+.input-field:focus,
+.search-field:focus,
+.select-control:focus {
+  outline: none;
+  border-color: var(--color-flash-red);
+  box-shadow: 0 0 0 1px var(--color-flash-red), var(--glow-red);
+  background-color: var(--color-surface-raised);
+}
+
+.input-field:disabled,
+.select-control:disabled {
+  background-color: var(--disabled-bg);
+  border-color: var(--disabled-border);
+  color: var(--disabled-text);
+  cursor: not-allowed;
+}
+
+/* Input with Error State */
+.input-error {
+  border-color: var(--feedback-error) !important;
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 1px var(--feedback-error), var(--glow-red) !important;
+}
+
+/* ==========================================================================
+   3. BADGES, STATUS PILLS & ARCHIVAL METADATA
+   ========================================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-meta-mono);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  border-radius: var(--radius-xs);
+  border: var(--border-width-hairline) solid transparent;
+  line-height: 1.2;
+}
+
+/* Lightning Strike Live Badge */
+.badge-strike {
+  background-color: rgba(196, 20, 32, 0.14);
+  border-color: rgba(255, 197, 46, 0.45);
+  color: var(--color-lightning-gold);
+}
+
+.badge-strike .pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-lightning-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--color-lightning-gold);
+  animation: strike-pulse 1.6s infinite;
+}
+
+@keyframes strike-pulse {
+  0% { opacity: 0.3; transform: scale(0.9); }
+  40% { opacity: 1.0; transform: scale(1.2); }
+  60% { opacity: 0.8; transform: scale(1.0); }
+  100% { opacity: 0.3; transform: scale(0.9); }
+}
+
+/* Archival Edition Badge */
+.badge-edition {
+  background-color: var(--color-surface-raised);
+  border-color: var(--border-crimson);
+  color: var(--color-ash-grey);
+}
+
+/* Warm Amber Secondary Badge */
+.badge-amber {
+  background-color: rgba(255, 157, 36, 0.12);
+  border-color: rgba(255, 157, 36, 0.4);
+  color: var(--color-warm-amber);
+}
+
+/* Out of Stock / Sold Out Badge */
+.badge-soldout {
+  background-color: rgba(133, 133, 141, 0.12);
+  border-color: var(--border-default);
+  color: var(--color-ash-grey);
+  text-decoration: line-through;
+}
+
+/* ==========================================================================
+   4. CARDS & CONTAINER SPECIFICATIONS
+   ========================================================================== */
+
+.card-surface {
+  background-color: var(--color-surface-base);
+  border: var(--border-width-hairline) solid var(--border-default);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+}
+
+.card-interactive {
+  transition: var(--transition-base);
+  cursor: pointer;
+}
+
+.card-interactive:hover {
+  border-color: var(--color-flash-red);
+  box-shadow: var(--shadow-card), var(--glow-red);
+  transform: translateY(-2px);
+}
+
+.card-crimson {
+  background-color: var(--color-surface-base);
+  border: var(--border-width-hairline) solid var(--border-crimson);
+  background-image: radial-gradient(circle at 100% 0%, rgba(101, 11, 18, 0.35) 0%, transparent 70%);
+}
+
+/* ==========================================================================
+   5. DIRECTIONAL SPEED LINES & KINETIC ACCENTS
+   ========================================================================== */
+
+.speed-line {
+  height: 2px;
+  background: var(--speed-line-grad);
+  transform: var(--speed-skew);
+  opacity: 0.85;
+}
+
+.speed-accent-corner {
+  position: relative;
+}
+
+.speed-accent-corner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--color-flash-red);
+}

@@ -1,0 +1,261 @@
+/**
+ * FLASHWEAR DESIGN SYSTEM — DESIGN TOKENS
+ * Creative Direction: LIGHTNING STRIKE
+ * Version: 2.0.0
+ * 
+ * Strict adherence to the approved Phase 01 Lightning Strike Brand Identity:
+ * Deep black, crimson red, fiery orange, and electric golden-yellow accents.
+ */
+
+:root {
+  /* ==========================================================================
+     1. RAW COLOR PALETTE (PRIMITIVES)
+     ========================================================================== */
+  --color-obsidian:        #09090B; /* Core canvas black (L* ~ 3.5%) */
+  --color-deep-crimson:    #650B12; /* Dark red surfaces, shadows & mood */
+  --color-flash-red:       #C41420; /* Primary brand color / dominant accent */
+  --color-electric-orange: #FF4A16; /* Energy transitions & dynamic bursts */
+  --color-lightning-gold:  #FFC52E; /* Lightning highlights & spark points */
+  --color-warm-amber:      #FF9D24; /* Secondary highlights & capsule tags */
+  --color-ash-grey:        #85858D; /* Muted typography, inactive borders */
+  --color-cloud-white:     #F5F5F5; /* Primary light typography on dark */
+  --color-pure-white:      #FFFFFF; /* High-contrast elements, laser focus */
+
+  /* Surface Nuances for Depth */
+  --color-surface-base:    #120D0F; /* Slightly elevated dark crimson surface */
+  --color-surface-raised:  #1A1215; /* Interactive containers, cards, modals */
+  --color-surface-sunken:  #060607; /* Deep recessed inputs & track bars */
+
+  /* ==========================================================================
+     2. SEMANTIC COLOR TOKENS
+     ========================================================================== */
+  
+  /* Background / Canvas Tokens */
+  --bg-primary:            var(--color-obsidian);
+  --bg-secondary:          var(--color-surface-base);
+  --bg-elevated:           var(--color-surface-raised);
+  --bg-crimson:            var(--color-deep-crimson);
+  --bg-sunken:             var(--color-surface-sunken);
+  --bg-overlay:            rgba(9, 9, 11, 0.92);
+  --bg-modal:              rgba(18, 13, 15, 0.96);
+  --bg-strike-glow:        rgba(196, 20, 32, 0.12);
+  --bg-gold-glow:          rgba(255, 197, 46, 0.08);
+
+  /* Typography Color Tokens */
+  --text-primary:          var(--color-cloud-white);
+  --text-contrast:         var(--color-pure-white);
+  --text-secondary:        var(--color-ash-grey);
+  --text-muted:            rgba(133, 133, 141, 0.65);
+  --text-brand:            var(--color-flash-red);
+  --text-accent:           var(--color-lightning-gold);
+  --text-energy:           var(--color-electric-orange);
+  --text-inverse:          var(--color-obsidian);
+
+  /* Brand Accent Tokens */
+  --accent-primary:        var(--color-flash-red);        /* Dominant accent */
+  --accent-secondary:      var(--color-electric-orange);  /* Energy burst */
+  --accent-highlight:      var(--color-lightning-gold);   /* Lightning spark */
+  --accent-amber:          var(--color-warm-amber);       /* Capsule accent */
+
+  /* Structural Borders & Dividers */
+  --border-subtle:         #2A1418;
+  --border-default:        #3E161C;
+  --border-crimson:        var(--color-deep-crimson);
+  --border-brand:          var(--color-flash-red);
+  --border-highlight:      var(--color-lightning-gold);
+  --divider:               rgba(133, 133, 141, 0.18);
+
+  /* Interactive States */
+  --interactive-hover-bg:     rgba(196, 20, 32, 0.14);
+  --interactive-hover-border: var(--color-flash-red);
+  --interactive-active-bg:    var(--color-flash-red);
+  --focus-ring:               0 0 0 2px var(--color-obsidian), 0 0 0 4px var(--color-flash-red);
+  --focus-ring-gold:          0 0 0 2px var(--color-obsidian), 0 0 0 4px var(--color-lightning-gold);
+  --disabled-bg:              rgba(133, 133, 141, 0.12);
+  --disabled-text:            rgba(133, 133, 141, 0.45);
+  --disabled-border:          rgba(133, 133, 141, 0.20);
+
+  /* Functional Feedback Tokens */
+  --feedback-success:      #10B981;
+  --feedback-warning:      var(--color-lightning-gold);
+  --feedback-error:        var(--color-flash-red);
+  --feedback-info:         #3B82F6;
+
+  /* ==========================================================================
+     3. TYPOGRAPHY SYSTEM
+     ========================================================================== */
+  
+  /* Font Family Stacks */
+  --font-display: 'Syne', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Space Mono', SFMono-Regular, Menlo, monospace;
+
+  /* Font Weights */
+  --font-weight-regular:   400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+  --font-weight-extrabold: 800;
+
+  /* Line Heights */
+  --line-height-none:     1.00;
+  --line-height-tight:    1.08;
+  --line-height-snug:     1.25;
+  --line-height-normal:   1.55;
+  --line-height-relaxed:  1.65;
+
+  /* Letter Spacing (Tracking) */
+  --tracking-tighter:     -0.04em;
+  --tracking-tight:       -0.02em;
+  --tracking-normal:       0.00em;
+  --tracking-wide:        +0.04em;
+  --tracking-wider:       +0.12em;
+  --tracking-widest:      +0.18em;
+
+  /* Typographic Scale (Fluid and Fixed Tokens) */
+  --text-display-2xl: clamp(48px, 6.5vw, 84px);
+  --text-display-xl:  clamp(36px, 4.5vw, 56px);
+  --text-heading-lg:  clamp(26px, 3.0vw, 36px);
+  --text-heading-md:  24px;
+  --text-heading-sm:  18px;
+  --text-body-lg:     18px;
+  --text-body-base:   15px;
+  --text-body-sm:     13px;
+  --text-caption:     12px;
+  --text-meta-mono:   11px;
+  --text-btn:         13px;
+  --text-price:       16px;
+  --text-product-name:15px;
+
+  /* ==========================================================================
+     4. SPACING SYSTEM (4px BASE INCREMENTS)
+     ========================================================================== */
+  --space-0:   0px;
+  --space-1:   4px;   /* 0.25rem */
+  --space-2:   8px;   /* 0.50rem */
+  --space-3:   12px;  /* 0.75rem */
+  --space-4:   16px;  /* 1.00rem */
+  --space-5:   20px;  /* 1.25rem */
+  --space-6:   24px;  /* 1.50rem */
+  --space-8:   32px;  /* 2.00rem */
+  --space-10:  40px;  /* 2.50rem */
+  --space-12:  48px;  /* 3.00rem */
+  --space-16:  64px;  /* 4.00rem */
+  --space-20:  80px;  /* 5.00rem */
+  --space-24:  96px;  /* 6.00rem */
+  --space-32:  128px; /* 8.00rem */
+
+  /* Semantic Spacing Aliases */
+  --space-component-xs: var(--space-1);  /* 4px */
+  --space-component-sm: var(--space-2);  /* 8px */
+  --space-component-md: var(--space-4);  /* 16px */
+  --space-component-lg: var(--space-6);  /* 24px */
+  --space-section-sm:   var(--space-12); /* 48px */
+  --space-section-md:   var(--space-20); /* 80px */
+  --space-section-lg:   var(--space-32); /* 128px */
+
+  /* ==========================================================================
+     5. LAYOUT AND CONTAINER SYSTEM
+     ========================================================================== */
+  --container-max:        1360px;
+  --container-desktop:    1280px;
+  --container-tablet:     768px;
+  --container-mobile:     100%;
+
+  /* Horizontal Page Gutters */
+  --page-padding-mobile:  var(--space-4);  /* 16px */
+  --page-padding-tablet:  var(--space-8);  /* 32px */
+  --page-padding-desktop: var(--space-12); /* 48px */
+
+  /* Grid Gaps */
+  --grid-gap-mobile:      var(--space-3);  /* 12px */
+  --grid-gap-tablet:      var(--space-4);  /* 16px */
+  --grid-gap-desktop:     var(--space-6);  /* 24px */
+  --grid-gap-editorial:   var(--space-8);  /* 32px */
+
+  /* Breakpoints (Documented & For Media Queries) */
+  --breakpoint-sm:  640px;
+  --breakpoint-md:  768px;
+  --breakpoint-lg:  1024px;
+  --breakpoint-xl:  1280px;
+  --breakpoint-2xl: 1440px;
+
+  /* ==========================================================================
+     6. BORDER, RADIUS, AND SHADOW SYSTEM
+     ========================================================================== */
+  
+  /* Border Widths */
+  --border-width-hairline: 1px;
+  --border-width-standard: 1.5px;
+  --border-width-thick:    2px;
+
+  /* Border Radii */
+  --radius-none:  0px;    /* Architectural sharp corners */
+  --radius-xs:    2px;    /* Precision buttons, tags, badges */
+  --radius-sm:    4px;    /* Standard cards, inputs */
+  --radius-md:    8px;    /* Elevated overlay panels */
+  --radius-lg:    12px;   /* Modals, prominent containers */
+  --radius-pill:  9999px; /* Pill badges, status tags */
+
+  /* Elevation Shadows & Kinetic Glows */
+  --shadow-subtle:         0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-card:           0 4px 16px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border-default);
+  --shadow-drawer:         -8px 0 32px rgba(0, 0, 0, 0.85);
+  --shadow-modal:          0 20px 48px rgba(0, 0, 0, 0.9), 0 0 0 1px var(--border-crimson);
+  
+  /* Lightning Strike Controlled Glows */
+  --glow-red:              0 0 24px rgba(196, 20, 32, 0.25);
+  --glow-red-strong:       0 0 36px rgba(196, 20, 32, 0.45);
+  --glow-orange:           0 0 20px rgba(255, 74, 22, 0.30);
+  --glow-gold:             0 0 16px rgba(255, 197, 46, 0.35);
+
+  /* ==========================================================================
+     7. MOTION AND TRANSITION TOKENS
+     ========================================================================== */
+  
+  /* Durations */
+  --duration-instant:    80ms;
+  --duration-fast:       120ms;
+  --duration-normal:     200ms;
+  --duration-slow:       350ms;
+  --duration-deliberate: 500ms;
+
+  /* High-Velocity Easing Functions */
+  --ease-velocity:       cubic-bezier(0.16, 1, 0.3, 1); /* Instant deceleration */
+  --ease-standard:       cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in:             cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:            cubic-bezier(0, 0, 0.2, 1);
+
+  /* Semantic Transition Shortcuts */
+  --transition-fast:      all var(--duration-fast) var(--ease-velocity);
+  --transition-base:      all var(--duration-normal) var(--ease-velocity);
+  --transition-transform: transform var(--duration-normal) var(--ease-velocity);
+  --transition-fade:      opacity var(--duration-normal) var(--ease-velocity);
+  --transition-color:     color var(--duration-fast) var(--ease-velocity), 
+                          background-color var(--duration-fast) var(--ease-velocity), 
+                          border-color var(--duration-fast) var(--ease-velocity);
+
+  /* ==========================================================================
+     8. LIGHTNING STRIKE KINETIC VISUAL MOTIFS
+     ========================================================================== */
+  --speed-skew:           skewX(-14deg);
+  --speed-line-grad:      linear-gradient(90deg, transparent, var(--color-flash-red), var(--color-lightning-gold));
+  --strike-grad:          linear-gradient(135deg, var(--color-flash-red) 0%, var(--color-electric-orange) 60%, var(--color-lightning-gold) 100%);
+  --crimson-ambient-grad: radial-gradient(circle at 85% 15%, rgba(101, 11, 18, 0.28) 0%, transparent 50%);
+}
+
+/* Reduced Motion Override for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant:    0ms;
+    --duration-fast:       0ms;
+    --duration-normal:     0ms;
+    --duration-slow:       0ms;
+    --duration-deliberate: 0ms;
+    --transition-fast:      none;
+    --transition-base:      none;
+    --transition-transform: none;
+    --transition-fade:      none;
+    --transition-color:     none;
+  }
+}
