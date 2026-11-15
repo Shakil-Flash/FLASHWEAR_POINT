@@ -1,0 +1,11 @@
+# System & Temporary
+.DS_Store
+Thumbs.db
+*.log
+scratch/
+
+# Dependencies & Build (for upcoming phases)
+node_modules/
+dist/
+build/
+.cache/

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none" role="img" aria-label="FLASHWEAR Kinetic Monogram">
+  <title>FLASHWEAR Kinetic Monogram (Volt Accent)</title>
+  <g id="fw-monogram-kinetic">
+    <!-- F Component in Optic White -->
+    <path d="M22 24H62V38H38V52H56V66H38V96H22V24Z" fill="#FAFAFA"/>
+    <!-- Kinetic Flash Shard in Electric Volt (#D4FF00) -->
+    <polygon points="52,96 66,52 74,52 63,96" fill="#D4FF00"/>
+    <!-- W Center and Right Stem in Optic White -->
+    <path d="M68.5 96L80.5 52H96L83 96H68.5Z" fill="#FAFAFA"/>
+    <polygon points="69.5,83 75.5,65 80.5,80" fill="#FAFAFA"/>
+    <!-- Technical Precision Anchors in Volt -->
+    <circle cx="22" cy="18" r="1.5" fill="#D4FF00"/>
+    <circle cx="96" cy="18" r="1.5" fill="#D4FF00"/>
+    <circle cx="22" cy="102" r="1.5" fill="#D4FF00"/>
+    <circle cx="96" cy="102" r="1.5" fill="#D4FF00"/>
+  </g>
+</svg>
