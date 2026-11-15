@@ -1,132 +1,117 @@
 # FLASHWEAR — VISUAL DIRECTION & DESIGN SPECIFICATION
-**Document:** Visual Direction & Design Blueprint  
-**Phase:** 01 — Brand Identity and Visual Direction  
+**Creative Direction:** LIGHTNING STRIKE  
+**Version:** 2.0.0 (Phase 01 Brand Identity Correction)  
 **Audience:** Digital Art Directors, UI/UX Designers, Frontend Engineers  
 **Target System:** 30-Phase FLASHWEAR Flagship E-Commerce Platform  
 
 ---
 
-## 1. EXECUTIVE CREATIVE DIRECTION
+## 1. EXECUTIVE CREATIVE DIRECTION: "LIGHTNING STRIKE"
 
-### 1.1 The Core Concept: "Architectural Kinetics"
-The creative direction for FLASHWEAR is defined as **Architectural Kinetics: The New Monochrome**.
+### 1.1 The Creative Concept
+The creative direction for FLASHWEAR is **LIGHTNING STRIKE**.
 
-This direction establishes FLASHWEAR not as an ordinary digital retail catalog, but as a digital flagship living at the nexus of three modern creative disciplines:
-1. **Architectural Brutalism & Structural Rigor:** Garments are treated as wearable architecture. Digital layouts are structured using disciplined 12-column Swiss grids, 1px structural hairline borders, and strict spatial rhythms.
-2. **Kinetic Velocity & High-Contrast Light:** Derived from the brand's namesake—**FLASH**—the aesthetic captures the decisive, illuminating instant. The visual language uses deep obsidian blacks interrupted by sharp white light and micro-sparks of **Electric Volt (`#D4FF00`)**.
-3. **High-Fashion Editorial Poise:** Inspired by modern runway presentation, luxury lookbooks, and avant-garde art monographs. The interface prioritizes curated visual storytelling, non-intrusive negative space, and disciplined typographic scale.
+It replaces passive monochrome with a high-velocity visual identity inspired by the kinetic energy of lightning, super-speed motion, and cinematic red-orange electrical effects:
+1. **Deep Obsidian & Dark Crimson Foundations:** The canvas is rooted in rich **Obsidian Black (`#09090B`)** and velvety **Deep Crimson (`#650B12`)**, creating a moody, atmospheric, and nocturnal high-fashion backdrop.
+2. **Dominant Flash Red Anchor:** **Flash Red (`#C41420`)** serves as the primary brand color and dominant interactive driver, projecting confidence, power, and immediate visual urgency.
+3. **Kinetic Orange & Lightning Gold Highlights:** **Electric Orange (`#FF4A16`)**, **Warm Amber (`#FF9D24`)**, and **Lightning Gold (`#FFC52E`)** introduce directional electricity, spark points, and high-voltage contrast without visually cluttering the interface.
+4. **Directional Velocity & Illumination:** Layouts feature subtle 45° speed-line accents, dynamic diagonal tensions, and controlled ambient crimson illumination that frames garments like objects captured at high velocity.
 
-### 1.2 Justification of Creative Choices
-- **Why Monochrome with Kinetic Volt?**  
-  Streetwear collections often feature expressive textures, diverse garment washes, and seasonal pigments. A monochromatic base (`#0A0A0B` / `#FAFAFA`) provides a neutral, gallery-grade foundation that honors the apparel. The single Electric Volt accent (`#D4FF00`) introduces a high-tech kinetic signature without visually clashing with garment colorways.
-- **Why Pure Geometric Typography?**  
-  Display typography using wide-stance geometric letterforms (`Syne` / `Plus Jakarta Sans`) conveys architectural stability and strength. Paired with `Inter` for body copy and `JetBrains Mono` for archival data stamps, this typographic trio balances high-fashion prestige with industrial efficiency.
-- **Why Hairline Blueprint Dividers?**  
-  Rather than standard card shadows and heavy floating elements, 1px borders (`#28282D`) frame components like technical blueprints, giving the interface a sharp, precision-engineered tactile quality.
+### 1.2 Justification of Important Creative Choices
+- **Why Flash Red as the Primary Dominant Accent?**  
+  Red is the ultimate color of speed, passion, adrenaline, and power. By pairing Flash Red with Deep Crimson and Obsidian Black, the brand establishes an unmistakably bold, athletic-editorial presence that differentiates it instantly from generic monochrome fashion stores.
+- **Why Restrain Orange and Gold to Highlights?**  
+  Electric Orange and Lightning Gold are high-intensity wavelengths. Using them with 4% and 2% discipline as precision sparks, badges, and kinetic accents ensures maximum visual impact while preserving an elevated, luxury aesthetic.
+- **Why Directional Speed Lines Over Literal Lightning Bolts?**  
+  Literal thunderbolt graphics feel juvenile and derivative. Instead, FLASHWEAR uses architectural, razor-sharp 45° and 60° vector speed lines, acute diagonal crop angles, and hairline coordinate rules that communicate electricity and super-speed with mature design discipline.
 
 ---
 
 ## 2. DESIGN REFERENCE SPECIFICATION FOR FUTURE HOMEPAGE PHASES
 
-### 2.1 Overall Visual Atmosphere
-- **The Mood:** Quiet confidence, cinematic tension, nocturnal urban energy.
-- **Spatial Rhythm:** Expansive, breathing, unhurried. The interface never feels crowded or anxious to sell. It invites the visitor to explore an archival exhibition.
-- **Surface Texture:** Flat, matte, non-reflective surfaces. Subtle backdrop blur (`backdrop-filter: blur(12px)`) on sticky headers and overlays to maintain depth without skeuomorphic clutter.
+### 2.1 Desired Overall Visual Atmosphere
+- **The Mood:** High-voltage nocturnal energy, cinematic speed, and runway poise.
+- **Illumination:** Low-key lighting with controlled red-orange backlights and crisp white frontal clarity.
+- **Spatial Rhythm:** Dynamic and directional. Sections flow with forward momentum, punctuated by hairline dividers and glowing status badges.
 
 ### 2.2 Homepage First Impression (Above-the-Fold Architecture)
-When a user lands on the FLASHWEAR homepage:
-- **Immediate Takeaway (0–3 Seconds):** An instant recognition of world-class fashion authority. The screen is anchored by:
-  1. A razor-sharp navigation bar displaying the primary wordmark `FLASHWEAR`, minimal category links (`ARCHIVE`, `COLLECTIONS`, `EDITIONS`, `ABOUT`), and the live drop indicator.
-  2. A commanding full-bleed hero visual featuring high-contrast editorial photography.
-  3. A monolithic display headline set in `display-2xl` uppercase typography (`FORM AT HIGH VELOCITY.`), paired with an archival edition tag (`EDITION 01 // AUTUMN-WINTER`).
-  4. A singular, restrained call-to-action button that invites exploration rather than demanding immediate purchase (`EXPLORE COLLECTION`).
+When visitors arrive at the FLASHWEAR homepage:
+1. **Header Navigation:** The primary wordmark `FLASHWEAR` in Cloud White (`#F5F5F5`), flanked by minimal navigation links and an energized live drop badge (`● LIGHTNING STRIKE // LIVE`).
+2. **Hero Atmosphere:** Full-bleed cinematic photography anchored in deep obsidian and crimson shadow, with subtle red-orange electrical energy accents tracing the silhouette.
+3. **Commanding Masthead:** `display-2xl` uppercase headline (`FORM AT THE SPEED OF LIGHT.`), grounded by an archival metadata stamp (`EDITION 01 // CRIMSON LIGHTNING CAPSULE`).
+4. **Primary Interactive CTA:** A Flash Red button (`#C41420`) with white typography that ignites with an Electric Orange hover glow (`#FF4A16`).
 
 ```
 +----------------------------------------------------------------------------------+
-| [FW]  COLLECTIONS   EDITIONS   ARCHIVE                 SEARCH  CART [0]  ● LIVE  |
+| [FW]  COLLECTIONS   EDITIONS   ARCHIVE                 SEARCH  BAG [0]  ● STRIKE |
 |----------------------------------------------------------------------------------|
 |                                                                                  |
-|   [ EDITORIAL CAMPAIGN PHOTOGRAPHY ]                                             |
-|   Architectural silhouette. Directional lighting. Raw concrete.                 |
+|   [ CINEMATIC HIGH-VELOCITY HERO PHOTOGRAPHY ]                                   |
+|   Deep obsidian black & crimson shadow. Directional rim light.                   |
 |                                                                                  |
-|   F O R M   A T   H I G H   V E L O C I T Y .                                    |
-|   EDITION 01 // ARCHITECTURAL STREETWEAR                                         |
+|   F O R M   A T   T H E   S P E E D   O F   L I G H T .                          |
+|   LIGHTNING STRIKE // EDITION 01                                                 |
 |                                                                                  |
-|   [ EXPLORE COLLECTION ]     [ VIEW LOOKBOOK ]                                   |
+|   [ EXPLORE CAPSULE // → ]     [ VIEW LOOKBOOK ↗ ]                              |
 |                                                                                  |
 +----------------------------------------------------------------------------------+
 ```
 
-### 2.3 The Relationship Between Photography and Typography
-- **Overlapping Hierarchy:** Large typographic headlines may subtly overlap photography only when high-contrast masks or deliberate placement ensure 100% legibility.
-- **Textual Anchors:** Photography is grounded by micro-metadata placed at the corners of image containers (e.g., `LOOK 04 / 12`, `FABRIC: 500GSM DOUBLE-FACE TERRY`, `SCALE: OVERSIZED`).
-- **Typographic Scale as Framing:** Editorial typography acts as architectural scaffolding that holds the photographic content in equilibrium.
+### 2.3 Photography and Typography Relationship
+- **Dynamic Framing:** Typography acts as the structural coordinate grid that pins down high-velocity photographic action.
+- **Textual Sparks:** Micro-metadata in `JetBrains Mono` (`[VELOCITY: 880 M/S]`, `[COLORWAY: FLASH RED / CRIMSON]`) placed at the periphery of photography containers.
+- **Contrast Integrity:** Headings and text always sit on deep obsidian (`#09090B`) or deep crimson (`#650B12`) overlays to guarantee WCAG AAA contrast ratios.
 
 ### 2.4 Expected Visual Hierarchy
-1. **Level 1 — The Hook (Display XL/2XL):** Hero statement or collection title. High-impact visual anchor.
-2. **Level 2 — The Garment (Visual Asset):** Large-scale editorial imagery or 3:4 product photography.
-3. **Level 3 — The Archival Descriptor (Mono Meta):** Edition number, silhouette classification, colorway tag.
-4. **Level 4 — The Nomenclature (Heading MD/SM):** Exact garment name and pricing.
-5. **Level 5 — The Interaction (CTA / Micro-link):** Subtle interactive triggers (`VIEW PIECE // +`).
+1. **Level 1 — The Lightning Hook:** Bold Display Headline (`display-2xl` / `display-xl`).
+2. **Level 2 — The Hero Garment:** Cinematic photography featuring directional crimson rim-lighting.
+3. **Level 3 — The Primary Action:** Flash Red (`#C41420`) button or interactive link.
+4. **Level 4 — The Archival Descriptor:** Lightning Gold (`#FFC52E`) or Warm Amber (`#FF9D24`) micro-tag.
+5. **Level 5 — The Technical Spec:** Cloud White (`#F5F5F5`) and Ash Grey (`#85858D`) product descriptions.
 
-### 2.5 Balance Between Whitespace (Negative Space) and Content
-- **Micro Spacing:** 4px, 8px, 12px, 16px used within components (padding around labels, icon gaps, badge padding).
-- **Macro Spacing:** 48px, 64px, 80px, 120px used between major homepage modules and sections.
-- **Editorial Asymmetry:** Not every grid column needs to be filled. Intentional empty cells in the 12-column grid create breathing room and draw focus to featured hero pieces.
-
-### 2.6 Promotional Content & Sales Framing
-- **No screaming discount banners:** Never use blinking text, bright red slash-through prices, or panic-inducing countdown clocks.
-- **Archival Treatment:** Promotional events are framed as **"ARCHIVE ACCESS"**, **"PRIVATE ALLOCATION"**, or **"SEASONAL CURATION"**.
-- **Pricing Display:** Displayed cleanly alongside currency codes (e.g., `USD $240 // EUR €220`). Reductions are displayed discreetly in muted titanium (`#71717A`) alongside the archival price.
-
-### 2.7 Product Imagery Presentation
-- **Aspect Ratio:** Standardized **3:4** for product cards and **4:5** for full lookbooks.
-- **Backdrop:** Seamless neutral dark graphite (`#141416`) or crisp bone white (`#F4F4F5`).
-- **Garment Styling:** Boxy, architectural drape. Floating cutout or ghost-mannequin effect with realistic drop shadow, or on-model editorial styling.
-- **Micro-Detail Zoom:** Hover states reveal a crisp macro crop (zippers, stitch density, fabric grain, hardware engravings).
-
-### 2.8 Cross-Section Brand Recognition
-To ensure the FLASHWEAR brand is unmistakable across all 30 upcoming phases:
-1. **The Persistent 1px Hairline Framework:** Every grid card, divider, and container utilizes consistent `#28282D` borders.
-2. **The Signature Monospaced Metadata Ribbon:** Uniform use of `JetBrains Mono` uppercase tags (`[FW-ED01]`, `ARCHIVE // 2026`).
-3. **The Kinetic Volt Indicator:** Persistent micro-presence of `#D4FF00` on active states, live indicators, and hover markers.
-4. **Consistent Edge Radii:** Strict `0px` or `2px` border radius across all interactive buttons, cards, and input fields.
+### 2.5 Product Imagery Presentation
+- **Aspect Ratio:** Standardized **3:4** for product cards and **4:5** for full lookbook portraits.
+- **Backdrop:** Deep obsidian black with a subtle, radial deep crimson gradient (`#650B12` to `#09090B`).
+- **Lighting Direction:** Crisp white key light to showcase fabric texture accurately, accompanied by a subtle red-orange rim light along garment edges to convey kinetic energy.
+- **Hover Kinetic Effect:** Hovering a product card triggers a subtle 1px Flash Red border glow and a clean, slow scale zoom (`scale(1.025)`).
 
 ---
 
-## 3. DIGITAL DESIGN SYSTEM FOUNDATION (DEVELOPER SPECIFICATION)
+## 3. DIGITAL DESIGN SYSTEM TOKENS (FRONTEND DEVELOPER SPECIFICATION)
 
 ### 3.1 CSS Custom Properties (Design Tokens)
-These tokens will be imported into future CSS, Tailwind, or Styled Components setups:
 
 ```css
 :root {
-  /* Surface & Canvas Tokens */
-  --fw-color-canvas: #0A0A0B;
-  --fw-color-surface-base: #141416;
-  --fw-color-surface-raised: #1C1C1F;
-  --fw-color-surface-overlay: rgba(10, 10, 11, 0.85);
+  /* Canvas & Surface Tokens */
+  --fw-color-canvas: #09090B;
+  --fw-color-surface-crimson: #650B12;
+  --fw-color-surface-base: #120D0F;
+  --fw-color-surface-raised: #1C1316;
+  --fw-color-surface-overlay: rgba(9, 9, 11, 0.90);
 
-  /* Border & Structural Tokens */
-  --fw-color-border-subtle: #1F1F24;
-  --fw-color-border-default: #28282D;
-  --fw-color-border-strong: #3F3F46;
+  /* Border & Line Tokens */
+  --fw-color-border-subtle: #2A1418;
+  --fw-color-border-default: #3E161C;
+  --fw-color-border-crimson: #650B12;
+  --fw-color-border-red: #C41420;
 
   /* Typography Color Tokens */
-  --fw-color-text-primary: #FAFAFA;
-  --fw-color-text-secondary: #A1A1AA;
-  --fw-color-text-muted: #71717A;
-  --fw-color-text-inverse: #0A0A0B;
+  --fw-color-text-primary: #F5F5F5;
+  --fw-color-text-pure: #FFFFFF;
+  --fw-color-text-muted: #85858D;
+  --fw-color-text-crimson: #C41420;
 
-  /* Signature Accents */
-  --fw-color-flash: #D4FF00;
-  --fw-color-flash-glow: rgba(212, 255, 0, 0.15);
-  --fw-color-signal: #FF4625;
+  /* Kinetic Energy Accents */
+  --fw-color-flash-red: #C41420;
+  --fw-color-electric-orange: #FF4A16;
+  --fw-color-lightning-gold: #FFC52E;
+  --fw-color-warm-amber: #FF9D24;
 
-  /* Light Canvas Variants (For Light Mode Modules) */
-  --fw-color-canvas-light: #F4F4F5;
-  --fw-color-surface-light: #FFFFFF;
-  --fw-color-border-light: #E4E4E7;
+  /* Glow & Illumination Effects */
+  --fw-glow-red: 0 0 24px rgba(196, 20, 32, 0.25);
+  --fw-glow-orange: 0 0 20px rgba(255, 74, 22, 0.30);
+  --fw-glow-gold: 0 0 16px rgba(255, 197, 46, 0.35);
 
   /* Typography Stacks */
   --fw-font-display: 'Syne', 'Plus Jakarta Sans', sans-serif;
@@ -137,80 +122,74 @@ These tokens will be imported into future CSS, Tailwind, or Styled Components se
   --fw-radius-none: 0px;
   --fw-radius-xs: 2px;
   --fw-radius-sm: 4px;
-  --fw-border-hairline: 1px solid var(--fw-color-border-default);
-
-  /* Animation Easing & Timing */
-  --fw-transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
-  --fw-transition-base: 250ms cubic-bezier(0.16, 1, 0.3, 1);
-  --fw-transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Motion & Speed */
+  --fw-transition-fast: 120ms cubic-bezier(0.16, 1, 0.3, 1);
+  --fw-transition-base: 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 ```
 
-### 3.2 Responsive Grid System
-- **Desktop (≥ 1280px):** 12-column grid, 24px gutters, max-width 1440px with 48px outer margins.
+### 3.2 Responsive Breakpoints & Grid
+- **Desktop (≥ 1280px):** 12-column grid, 24px gutters, max-width 1360px with 48px outer margins.
 - **Tablet (768px – 1279px):** 8-column grid, 16px gutters, 32px outer margins.
 - **Mobile (< 768px):** 4-column grid, 12px gutters, 16px outer margins.
 
-### 3.3 Micro-Interaction & Kinetic Motion Rules
-- **Hover Physics:** Transitions must be crisp and mechanical. Avoid elastic, springy, or cartoonish bouncing.
-- **Cursor State:** Custom crosshair or minimalist dot cursor with trailing kinetic volt indicator on desktop interactive zones.
-- **Image Reveal:** Slow, smooth scale zoom (`scale(1.03)`) on product image hover over 400ms.
-
 ---
 
-## 4. COMPONENT ARCHETYPE SPECIFICATIONS
+## 4. COMPONENT ARCHETYPES
 
-### 4.1 Primary Action Button (The Architectural CTA)
+### 4.1 Primary CTA Button (Flash Red Ignition)
 ```
 +-----------------------------------------------+
-|  EXPLORE COLLECTION // 01                 →   |
+|  EXPLORE CAPSULE // 01                    →   |
 +-----------------------------------------------+
-- Background: #FAFAFA (Optic White)
-- Text: #0A0A0B (Obsidian Black)
+- Background: #C41420 (Flash Red)
+- Text: #FFFFFF (Pure White)
 - Font: 'Inter' / SemiBold 13px / Uppercase / Tracking +0.12em
-- Border-Radius: 0px or 2px
-- Hover State: Background #D4FF00 (Electric Volt), Text #0A0A0B, crisp 150ms transition.
+- Border: 1px solid #C41420
+- Border-Radius: 2px
+- Hover State: Background #FF4A16 (Electric Orange), Border-color #FF4A16, Glow: var(--fw-glow-orange)
 ```
 
-### 4.2 Secondary / Ghost Button
+### 4.2 Secondary Button (Crimson Wireframe)
 ```
 +-----------------------------------------------+
 |  VIEW ARCHIVE LOOKBOOK                    ↗   |
 +-----------------------------------------------+
-- Background: Transparent
-- Text: #FAFAFA
-- Border: 1px solid #28282D
-- Hover State: Border-color #FAFAFA, Background #1C1C1F
+- Background: transparent
+- Text: #F5F5F5 (Cloud White)
+- Border: 1px solid #650B12 (Deep Crimson)
+- Hover State: Border-color #C41420, Background: rgba(101, 11, 18, 0.3)
 ```
 
-### 4.3 Archival Status Badge
+### 4.3 Lightning Strike Status Badge
 ```
-+--------------------------+
-|  ●  LIVE DROP // ED 01   |
-+--------------------------+
-- Background: rgba(212, 255, 0, 0.08)
-- Border: 1px solid rgba(212, 255, 0, 0.30)
-- Dot: #D4FF00 with subtle 1.5s pulse animation
-- Text: #D4FF00 / 'JetBrains Mono' 10px / Uppercase / Tracking +0.18em
++----------------------------------+
+|  ●  LIGHTNING STRIKE // LIVE     |
++----------------------------------+
+- Background: rgba(196, 20, 32, 0.12)
+- Border: 1px solid rgba(255, 197, 46, 0.40)
+- Dot: #FFC52E (Lightning Gold) with 1.6s electric pulse
+- Text: #FFC52E / 'JetBrains Mono' 10px / Uppercase / Tracking +0.18em
 ```
 
 ---
 
-## 5. SUMMARY OF DESIGN ASSETS FOR FRONTEND INTEGRATION
-
-All vector assets are ready for direct consumption by frontend frameworks (React, Next.js, Vite, Vue, HTML/CSS):
+## 5. COMPLETE SVG ASSET DIRECTORY
 
 ```
 public/assets/brand/
-├── flashwear-wordmark-dark.svg      -> Global desktop dark navigation & hero
-├── flashwear-wordmark-light.svg     -> Global light mode navigation & documentation
-├── flashwear-monogram-dark.svg      -> Minimal mobile navbar & dark footer
-├── flashwear-monogram-light.svg     -> Light surface branding & packaging preview
-├── flashwear-monogram-kinetic.svg   -> High-impact brand mark with Volt accent
-├── flashwear-lockup-dark.svg        -> Footer brand lockup & splash screen
-├── flashwear-lockup-light.svg       -> Light mode footer & invoice/receipt header
-└── flashwear-favicon.svg            -> Browser favicon & PWA home screen icon
+├── flashwear-wordmark-dark.svg      -> Primary Cloud White wordmark for dark headers
+├── flashwear-wordmark-light.svg     -> Primary Obsidian Black wordmark for light surfaces
+├── flashwear-wordmark-red.svg       -> Flash Red editorial wordmark
+├── flashwear-monogram-kinetic.svg   -> Signature Lightning Strike monogram (Red to Gold shard)
+├── flashwear-monogram-red.svg       -> Full Flash Red monogram with Orange shard
+├── flashwear-monogram-dark.svg      -> Cloud White monogram
+├── flashwear-monogram-light.svg     -> Obsidian Black monogram
+├── flashwear-lockup-dark.svg        -> Horizontal lockup with Lightning Gold tag
+├── flashwear-lockup-light.svg       -> Horizontal lockup for light surfaces
+└── flashwear-favicon.svg            -> 64x64 Lightning Strike app icon / favicon
 ```
 
 ---
-*FLASHWEAR Visual Direction & Creative Blueprint — End of Specification.*
+*FLASHWEAR Visual Direction & Creative Blueprint — LIGHTNING STRIKE Edition.*

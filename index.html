@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FLASHWEAR — Brand Identity & Visual Direction (Phase 01)</title>
+  <title>FLASHWEAR — Lightning Strike Brand Identity (Phase 01)</title>
   <link rel="icon" type="image/svg+xml" href="/public/assets/brand/flashwear-favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-canvas: #0A0A0B;
-      --color-surface-base: #141416;
-      --color-surface-raised: #1C1C1F;
-      --color-border-subtle: #1F1F24;
-      --color-border-default: #28282D;
-      --color-border-strong: #3F3F46;
-      --color-text-primary: #FAFAFA;
-      --color-text-secondary: #A1A1AA;
-      --color-text-muted: #71717A;
-      --color-flash: #D4FF00;
-      --color-signal: #FF4625;
-      --color-light-canvas: #F4F4F5;
-      --color-light-surface: #FFFFFF;
-      --color-light-border: #E4E4E7;
+      --color-canvas: #09090B;
+      --color-crimson: #650B12;
+      --color-surface-base: #120D0F;
+      --color-surface-raised: #1C1316;
+      --color-border-subtle: #2A1418;
+      --color-border-default: #3E161C;
+      --color-border-crimson: #650B12;
+      --color-flash-red: #C41420;
+      --color-orange: #FF4A16;
+      --color-gold: #FFC52E;
+      --color-amber: #FF9D24;
+      --color-ash: #85858D;
+      --color-cloud-white: #F5F5F5;
+      --color-pure-white: #FFFFFF;
       
       --font-display: 'Syne', 'Plus Jakarta Sans', sans-serif;
       --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -38,11 +38,15 @@
 
     body {
       background-color: var(--color-canvas);
-      color: var(--color-text-primary);
+      color: var(--color-cloud-white);
       font-family: var(--font-body);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       padding-bottom: 120px;
+      background-image: 
+        radial-gradient(circle at 85% 15%, rgba(101, 11, 18, 0.28) 0%, transparent 50%),
+        radial-gradient(circle at 10% 85%, rgba(196, 20, 32, 0.15) 0%, transparent 45%);
+      background-attachment: fixed;
     }
 
     /* Architectural Header */
@@ -50,8 +54,8 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(10, 10, 11, 0.92);
-      backdrop-filter: blur(16px);
+      background: rgba(9, 9, 11, 0.94);
+      backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--color-border-default);
       padding: 18px 48px;
       display: flex;
@@ -71,9 +75,9 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       padding: 4px 10px;
-      background: rgba(212, 255, 0, 0.08);
-      border: 1px solid rgba(212, 255, 0, 0.3);
-      color: var(--color-flash);
+      background: rgba(196, 20, 32, 0.12);
+      border: 1px solid rgba(255, 197, 46, 0.4);
+      color: var(--color-gold);
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -82,14 +86,16 @@
     .pulse-dot {
       width: 6px;
       height: 6px;
-      background-color: var(--color-flash);
+      background-color: var(--color-gold);
       border-radius: 50%;
-      animation: pulse 1.8s infinite;
+      box-shadow: 0 0 8px var(--color-gold);
+      animation: lightning-pulse 1.6s infinite;
     }
 
-    @keyframes pulse {
+    @keyframes lightning-pulse {
       0% { opacity: 0.3; transform: scale(0.9); }
-      50% { opacity: 1; transform: scale(1.15); }
+      40% { opacity: 1; transform: scale(1.2); }
+      60% { opacity: 0.8; transform: scale(1.0); }
       100% { opacity: 0.3; transform: scale(0.9); }
     }
 
@@ -100,7 +106,7 @@
     }
 
     nav a {
-      color: var(--color-text-secondary);
+      color: var(--color-ash);
       text-decoration: none;
       font-size: 12px;
       font-weight: 600;
@@ -110,7 +116,7 @@
     }
 
     nav a:hover {
-      color: var(--color-text-primary);
+      color: var(--color-flash-red);
     }
 
     .container {
@@ -123,16 +129,36 @@
     .hero-section {
       padding: 100px 0 80px 0;
       border-bottom: 1px solid var(--color-border-default);
+      position: relative;
+    }
+
+    /* Subtle Directional Speed Line Accent */
+    .hero-speed-line {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 380px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--color-flash-red), var(--color-gold));
+      transform: skewX(-45deg);
+      opacity: 0.8;
     }
 
     .meta-tag {
       font-family: var(--font-mono);
       font-size: 11px;
       letter-spacing: 0.22em;
-      color: var(--color-flash);
+      color: var(--color-gold);
       text-transform: uppercase;
       margin-bottom: 16px;
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .meta-tag::before {
+      content: '//';
+      color: var(--color-flash-red);
     }
 
     h1.hero-title {
@@ -145,11 +171,18 @@
       margin-bottom: 24px;
     }
 
+    .hero-title span.strike-highlight {
+      color: var(--color-flash-red);
+      background: linear-gradient(135deg, var(--color-pure-white) 0%, var(--color-flash-red) 70%, var(--color-orange) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
     .hero-lead {
-      color: var(--color-text-secondary);
+      color: var(--color-ash);
       font-size: 20px;
       font-weight: 400;
-      max-width: 720px;
+      max-width: 760px;
       margin-bottom: 40px;
       line-height: 1.5;
     }
@@ -164,12 +197,28 @@
       background: var(--color-surface-base);
       border: 1px solid var(--color-border-default);
       padding: 20px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--color-crimson);
+    }
+
+    .stat-card.active::before {
+      background: var(--color-flash-red);
     }
 
     .stat-label {
       font-family: var(--font-mono);
       font-size: 11px;
-      color: var(--color-text-muted);
+      color: var(--color-ash);
       letter-spacing: 0.14em;
       text-transform: uppercase;
       margin-bottom: 6px;
@@ -178,7 +227,7 @@
     .stat-value {
       font-size: 16px;
       font-weight: 600;
-      color: var(--color-text-primary);
+      color: var(--color-cloud-white);
     }
 
     /* Section Styling */
@@ -203,7 +252,7 @@
     }
 
     .section-desc {
-      color: var(--color-text-muted);
+      color: var(--color-ash);
       font-family: var(--font-mono);
       font-size: 12px;
       letter-spacing: 0.12em;
@@ -223,6 +272,11 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      transition: border-color 200ms ease;
+    }
+
+    .asset-card:hover {
+      border-color: var(--color-flash-red);
     }
 
     .asset-preview {
@@ -236,10 +290,11 @@
 
     .asset-preview.dark {
       background-color: var(--color-canvas);
+      background-image: radial-gradient(circle at center, rgba(101, 11, 18, 0.22) 0%, transparent 70%);
     }
 
     .asset-preview.light {
-      background-color: var(--color-light-canvas);
+      background-color: var(--color-cloud-white);
     }
 
     .asset-info {
@@ -262,13 +317,13 @@
       font-size: 10px;
       padding: 2px 6px;
       background: var(--color-surface-raised);
-      color: var(--color-text-muted);
+      color: var(--color-ash);
       border-radius: 2px;
     }
 
     .asset-desc {
       font-size: 13px;
-      color: var(--color-text-secondary);
+      color: var(--color-ash);
       margin-bottom: 12px;
     }
 
@@ -278,10 +333,15 @@
       gap: 6px;
       font-family: var(--font-mono);
       font-size: 11px;
-      color: var(--color-flash);
+      color: var(--color-flash-red);
       text-decoration: none;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .asset-link:hover {
+      color: var(--color-orange);
     }
 
     /* Color Swatches */
@@ -296,11 +356,13 @@
       border: 1px solid var(--color-border-default);
       padding: 16px;
       cursor: pointer;
-      transition: border-color 150ms ease;
+      transition: all 180ms ease;
+      position: relative;
     }
 
     .swatch-card:hover {
-      border-color: var(--color-flash);
+      border-color: var(--color-flash-red);
+      transform: translateY(-2px);
     }
 
     .swatch-box {
@@ -323,7 +385,7 @@
     .swatch-hex {
       font-family: var(--font-mono);
       font-size: 12px;
-      color: var(--color-text-muted);
+      color: var(--color-ash);
       display: flex;
       justify-content: space-between;
     }
@@ -352,7 +414,7 @@
     .type-meta {
       font-family: var(--font-mono);
       font-size: 11px;
-      color: var(--color-text-muted);
+      color: var(--color-ash);
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
@@ -364,6 +426,7 @@
       letter-spacing: -0.04em;
       line-height: 0.95;
       text-transform: uppercase;
+      color: var(--color-cloud-white);
     }
 
     .type-render-xl {
@@ -380,13 +443,14 @@
       font-weight: 700;
       letter-spacing: -0.02em;
       text-transform: uppercase;
+      color: var(--color-flash-red);
     }
 
     .type-render-body {
       font-family: var(--font-body);
       font-size: 15px;
       line-height: 1.6;
-      color: var(--color-text-secondary);
+      color: var(--color-ash);
       max-width: 800px;
     }
 
@@ -395,7 +459,7 @@
       font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--color-flash);
+      color: var(--color-gold);
     }
 
     /* Copy Toast Notification */
@@ -403,8 +467,8 @@
       position: fixed;
       bottom: 24px;
       right: 24px;
-      background: var(--color-flash);
-      color: var(--color-canvas);
+      background: var(--color-flash-red);
+      color: var(--color-pure-white);
       font-family: var(--font-mono);
       font-size: 12px;
       font-weight: 700;
@@ -416,6 +480,7 @@
       transition: all 200ms ease;
       pointer-events: none;
       z-index: 1000;
+      border: 1px solid var(--color-gold);
     }
 
     #toast.show {
@@ -433,7 +498,7 @@
       align-items: center;
       font-family: var(--font-mono);
       font-size: 11px;
-      color: var(--color-text-muted);
+      color: var(--color-ash);
       letter-spacing: 0.14em;
       text-transform: uppercase;
     }
@@ -452,13 +517,13 @@
   <header>
     <div class="brand-nav-left">
       <img src="/public/assets/brand/flashwear-wordmark-dark.svg" alt="FLASHWEAR" height="22">
-      <span class="brand-badge"><span class="pulse-dot"></span>PHASE 01 // SPECIFICATION</span>
+      <span class="brand-badge"><span class="pulse-dot"></span>LIGHTNING STRIKE // PHASE 01</span>
     </div>
     <nav>
       <ul>
         <li><a href="#overview">Overview</a></li>
         <li><a href="#logos">Logo Assets</a></li>
-        <li><a href="#palette">Color Palette</a></li>
+        <li><a href="#palette">Color Architecture</a></li>
         <li><a href="#typography">Typography</a></li>
         <li><a href="#art-direction">Art Direction</a></li>
       </ul>
@@ -468,28 +533,29 @@
   <div class="container">
     <!-- Hero Section -->
     <section class="hero-section" id="overview">
-      <span class="meta-tag">FOUNDATION 01/30 // BRAND CONSTITUTION</span>
-      <h1 class="hero-title">FORM AT HIGH VELOCITY.</h1>
+      <div class="hero-speed-line"></div>
+      <span class="meta-tag">PHASE 01 CORRECTION // BRAND IDENTITY SPECIFICATION</span>
+      <h1 class="hero-title">FORM AT THE <span class="strike-highlight">SPEED OF LIGHT.</span></h1>
       <p class="hero-lead">
-        FLASHWEAR establishes a modern architectural streetwear identity—synthesizing luxury editorial restraint, kinetic urban momentum, and precision Swiss layout discipline.
+        FLASHWEAR establishes a high-velocity architectural streetwear identity inspired by the kinetic energy of lightning, super-speed, and cinematic red-orange electrical illumination.
       </p>
 
       <div class="quick-stats">
-        <div class="stat-card">
-          <div class="stat-label">Brand Positioning</div>
-          <div class="stat-value">Architectural Streetwear</div>
+        <div class="stat-card active">
+          <div class="stat-label">Creative Direction</div>
+          <div class="stat-value" style="color: var(--color-flash-red);">LIGHTNING STRIKE</div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">Core Aesthetic</div>
-          <div class="stat-value">The New Monochrome</div>
+          <div class="stat-label">Foundation</div>
+          <div class="stat-value">Obsidian & Crimson</div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">Signature Accent</div>
-          <div class="stat-value" style="color: var(--color-flash);">Electric Volt (#D4FF00)</div>
+          <div class="stat-label">Primary Dominance</div>
+          <div class="stat-value" style="color: var(--color-flash-red);">Flash Red (#C41420)</div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">Verified SVG Assets</div>
-          <div class="stat-value">8 Production Marks</div>
+          <div class="stat-label">Energy Highlights</div>
+          <div class="stat-value" style="color: var(--color-gold);">Lightning Gold & Orange</div>
         </div>
       </div>
     </section>
@@ -501,7 +567,7 @@
           <span class="meta-tag">VECTOR IDENTITY</span>
           <h2 class="section-title">Master Logo Suite</h2>
         </div>
-        <span class="section-desc">8 Scalable Production SVGs</span>
+        <span class="section-desc">10 Scalable Production SVGs</span>
       </div>
 
       <div class="asset-grid">
@@ -512,91 +578,103 @@
           </div>
           <div class="asset-info">
             <div class="asset-name">flashwear-wordmark-dark.svg <span class="asset-badge">Primary</span></div>
-            <div class="asset-desc">Optic White on Obsidian Black. For desktop headers and hero mastheads.</div>
+            <div class="asset-desc">Cloud White (#F5F5F5) on Obsidian Black. For dark navigation bars and hero banners.</div>
             <a href="/public/assets/brand/flashwear-wordmark-dark.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
           </div>
         </div>
 
-        <!-- 2. Wordmark Light -->
+        <!-- 2. Wordmark Red -->
+        <div class="asset-card">
+          <div class="asset-preview dark">
+            <img src="/public/assets/brand/flashwear-wordmark-red.svg" alt="Wordmark Red" style="max-width: 85%; height: auto;">
+          </div>
+          <div class="asset-info">
+            <div class="asset-name">flashwear-wordmark-red.svg <span class="asset-badge" style="color: var(--color-flash-red);">Editorial</span></div>
+            <div class="asset-desc">Full Flash Red (#C41420) wordmark for high-energy campaign headlines and capsules.</div>
+            <a href="/public/assets/brand/flashwear-wordmark-red.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 3. Wordmark Light -->
         <div class="asset-card">
           <div class="asset-preview light">
             <img src="/public/assets/brand/flashwear-wordmark-light.svg" alt="Wordmark Light" style="max-width: 85%; height: auto;">
           </div>
           <div class="asset-info">
-            <div class="asset-name">flashwear-wordmark-light.svg <span class="asset-badge">Primary</span></div>
-            <div class="asset-desc">Obsidian Black on Bone White. For light mode modules and invoices.</div>
+            <div class="asset-name">flashwear-wordmark-light.svg <span class="asset-badge">Light Mode</span></div>
+            <div class="asset-desc">Obsidian Black (#09090B) on Cloud White. For light media and invoices.</div>
             <a href="/public/assets/brand/flashwear-wordmark-light.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
           </div>
         </div>
 
-        <!-- 3. Monogram Kinetic -->
+        <!-- 4. Monogram Kinetic Lightning Strike -->
         <div class="asset-card">
           <div class="asset-preview dark">
             <img src="/public/assets/brand/flashwear-monogram-kinetic.svg" alt="Monogram Kinetic" style="max-width: 100px; height: auto;">
           </div>
           <div class="asset-info">
-            <div class="asset-name">flashwear-monogram-kinetic.svg <span class="asset-badge" style="color: var(--color-flash);">Kinetic</span></div>
-            <div class="asset-desc">FW Monogram with signature Electric Volt (#D4FF00) dynamic flash shard.</div>
+            <div class="asset-name">flashwear-monogram-kinetic.svg <span class="asset-badge" style="color: var(--color-gold);">Lightning Shard</span></div>
+            <div class="asset-desc">FW Monogram with dynamic Flash Red to Lightning Gold kinetic energy shard.</div>
             <a href="/public/assets/brand/flashwear-monogram-kinetic.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
           </div>
         </div>
 
-        <!-- 4. Monogram Dark -->
+        <!-- 5. Monogram Red -->
+        <div class="asset-card">
+          <div class="asset-preview dark">
+            <img src="/public/assets/brand/flashwear-monogram-red.svg" alt="Monogram Red" style="max-width: 100px; height: auto;">
+          </div>
+          <div class="asset-info">
+            <div class="asset-name">flashwear-monogram-red.svg <span class="asset-badge" style="color: var(--color-flash-red);">Flash Red</span></div>
+            <div class="asset-desc">Full Flash Red (#C41420) monogram with Electric Orange shard and Gold anchors.</div>
+            <a href="/public/assets/brand/flashwear-monogram-red.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 6. Monogram Dark -->
         <div class="asset-card">
           <div class="asset-preview dark">
             <img src="/public/assets/brand/flashwear-monogram-dark.svg" alt="Monogram Dark" style="max-width: 100px; height: auto;">
           </div>
           <div class="asset-info">
             <div class="asset-name">flashwear-monogram-dark.svg <span class="asset-badge">Monochrome</span></div>
-            <div class="asset-desc">Optic White monolithic mark. For compact mobile navigation and dark footers.</div>
+            <div class="asset-desc">Cloud White monolithic mark. For mobile header navigation and dark footers.</div>
             <a href="/public/assets/brand/flashwear-monogram-dark.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
           </div>
         </div>
 
-        <!-- 5. Monogram Light -->
-        <div class="asset-card">
-          <div class="asset-preview light">
-            <img src="/public/assets/brand/flashwear-monogram-light.svg" alt="Monogram Light" style="max-width: 100px; height: auto;">
-          </div>
-          <div class="asset-info">
-            <div class="asset-name">flashwear-monogram-light.svg <span class="asset-badge">Monochrome</span></div>
-            <div class="asset-desc">Obsidian Black monolithic mark. For printed tags, garments, and light UI.</div>
-            <a href="/public/assets/brand/flashwear-monogram-light.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
-          </div>
-        </div>
-
-        <!-- 6. Horizontal Lockup Dark -->
+        <!-- 7. Horizontal Lockup Dark -->
         <div class="asset-card">
           <div class="asset-preview dark">
             <img src="/public/assets/brand/flashwear-lockup-dark.svg" alt="Lockup Dark" style="max-width: 90%; height: auto;">
           </div>
           <div class="asset-info">
-            <div class="asset-name">flashwear-lockup-dark.svg <span class="asset-badge">Lockup</span></div>
-            <div class="asset-desc">Monogram + Wordmark + Archival Tag. For footer anchors and splash screens.</div>
+            <div class="asset-name">flashwear-lockup-dark.svg <span class="asset-badge">Lockup Dark</span></div>
+            <div class="asset-desc">Monogram + Wordmark + Lightning Strike tag. For desktop footers and splash screens.</div>
             <a href="/public/assets/brand/flashwear-lockup-dark.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
           </div>
         </div>
 
-        <!-- 7. Horizontal Lockup Light -->
+        <!-- 8. Horizontal Lockup Light -->
         <div class="asset-card">
           <div class="asset-preview light">
             <img src="/public/assets/brand/flashwear-lockup-light.svg" alt="Lockup Light" style="max-width: 90%; height: auto;">
           </div>
           <div class="asset-info">
-            <div class="asset-name">flashwear-lockup-light.svg <span class="asset-badge">Lockup</span></div>
-            <div class="asset-desc">Light surface brand lockup for editorial lookbooks and formal media.</div>
+            <div class="asset-name">flashwear-lockup-light.svg <span class="asset-badge">Lockup Light</span></div>
+            <div class="asset-desc">Light surface brand lockup with Flash Red descriptor tag for lookbooks.</div>
             <a href="/public/assets/brand/flashwear-lockup-light.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
           </div>
         </div>
 
-        <!-- 8. Favicon -->
+        <!-- 9. Favicon -->
         <div class="asset-card">
           <div class="asset-preview dark">
             <img src="/public/assets/brand/flashwear-favicon.svg" alt="Favicon" style="max-width: 64px; height: auto;">
           </div>
           <div class="asset-info">
-            <div class="asset-name">flashwear-favicon.svg <span class="asset-badge">Icon</span></div>
-            <div class="asset-desc">64x64 pixel-aligned rounded icon with kinetic mark for browser tabs.</div>
+            <div class="asset-name">flashwear-favicon.svg <span class="asset-badge">Favicon</span></div>
+            <div class="asset-desc">64x64 Obsidian & Deep Crimson container with kinetic lightning mark.</div>
             <a href="/public/assets/brand/flashwear-favicon.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
           </div>
         </div>
@@ -608,70 +686,64 @@
       <div class="section-header">
         <div>
           <span class="meta-tag">CHROMATIC SPECIFICATION</span>
-          <h2 class="section-title">Color Architecture</h2>
+          <h2 class="section-title">Lightning Strike Palette</h2>
         </div>
         <span class="section-desc">Click any swatch to copy HEX</span>
       </div>
 
       <div class="swatch-grid">
-        <div class="swatch-card" onclick="copyHex('#0A0A0B')">
-          <div class="swatch-box" style="background-color: #0A0A0B;"></div>
+        <div class="swatch-card" onclick="copyHex('#09090B')">
+          <div class="swatch-box" style="background-color: #09090B;"></div>
           <div class="swatch-title">Obsidian Black</div>
-          <div class="swatch-hex"><span>#0A0A0B</span><span>Canvas</span></div>
+          <div class="swatch-hex"><span>#09090B</span><span>Canvas</span></div>
         </div>
 
-        <div class="swatch-card" onclick="copyHex('#141416')">
-          <div class="swatch-box" style="background-color: #141416;"></div>
-          <div class="swatch-title">Graphite Carbon</div>
-          <div class="swatch-hex"><span>#141416</span><span>Surface</span></div>
+        <div class="swatch-card" style="border-color: rgba(101, 11, 18, 0.6);" onclick="copyHex('#650B12')">
+          <div class="swatch-box" style="background-color: #650B12;"></div>
+          <div class="swatch-title">Deep Crimson</div>
+          <div class="swatch-hex"><span style="color: var(--color-flash-red);">#650B12</span><span>Surfaces</span></div>
         </div>
 
-        <div class="swatch-card" onclick="copyHex('#1C1C1F')">
-          <div class="swatch-box" style="background-color: #1C1C1F;"></div>
-          <div class="swatch-title">Deep Onyx</div>
-          <div class="swatch-hex"><span>#1C1C1F</span><span>Raised</span></div>
+        <div class="swatch-card" style="border-color: var(--color-flash-red); background: rgba(196, 20, 32, 0.08);" onclick="copyHex('#C41420')">
+          <div class="swatch-box" style="background-color: #C41420;"></div>
+          <div class="swatch-title" style="color: var(--color-flash-red);">Flash Red</div>
+          <div class="swatch-hex"><span style="color: var(--color-flash-red); font-weight: 700;">#C41420</span><span style="color: var(--color-flash-red);">PRIMARY</span></div>
         </div>
 
-        <div class="swatch-card" onclick="copyHex('#28282D')">
-          <div class="swatch-box" style="background-color: #28282D;"></div>
-          <div class="swatch-title">Industrial Slate</div>
-          <div class="swatch-hex"><span>#28282D</span><span>Border</span></div>
+        <div class="swatch-card" style="border-color: rgba(255, 74, 22, 0.5);" onclick="copyHex('#FF4A16')">
+          <div class="swatch-box" style="background-color: #FF4A16;"></div>
+          <div class="swatch-title" style="color: var(--color-orange);">Electric Orange</div>
+          <div class="swatch-hex"><span>#FF4A16</span><span>Energy</span></div>
         </div>
 
-        <div class="swatch-card" onclick="copyHex('#71717A')">
-          <div class="swatch-box" style="background-color: #71717A;"></div>
-          <div class="swatch-title">Muted Titanium</div>
-          <div class="swatch-hex"><span>#71717A</span><span>Metadata</span></div>
+        <div class="swatch-card" style="border-color: rgba(255, 197, 46, 0.6);" onclick="copyHex('#FFC52E')">
+          <div class="swatch-box" style="background-color: #FFC52E;"></div>
+          <div class="swatch-title" style="color: var(--color-gold);">Lightning Gold</div>
+          <div class="swatch-hex"><span>#FFC52E</span><span>Highlights</span></div>
         </div>
 
-        <div class="swatch-card" onclick="copyHex('#A1A1AA')">
-          <div class="swatch-box" style="background-color: #A1A1AA;"></div>
-          <div class="swatch-title">Silver Stone</div>
-          <div class="swatch-hex"><span>#A1A1AA</span><span>Secondary</span></div>
+        <div class="swatch-card" style="border-color: rgba(255, 157, 36, 0.5);" onclick="copyHex('#FF9D24')">
+          <div class="swatch-box" style="background-color: #FF9D24;"></div>
+          <div class="swatch-title" style="color: var(--color-amber);">Warm Amber</div>
+          <div class="swatch-hex"><span>#FF9D24</span><span>Secondary</span></div>
         </div>
 
-        <div class="swatch-card" onclick="copyHex('#FAFAFA')">
-          <div class="swatch-box" style="background-color: #FAFAFA;"></div>
-          <div class="swatch-title" style="color: #FAFAFA;">Pure Alabaster</div>
-          <div class="swatch-hex"><span>#FAFAFA</span><span>Text</span></div>
+        <div class="swatch-card" onclick="copyHex('#85858D')">
+          <div class="swatch-box" style="background-color: #85858D;"></div>
+          <div class="swatch-title">Ash Grey</div>
+          <div class="swatch-hex"><span>#85858D</span><span>Muted Text</span></div>
         </div>
 
-        <div class="swatch-card" onclick="copyHex('#F4F4F5')">
-          <div class="swatch-box" style="background-color: #F4F4F5;"></div>
-          <div class="swatch-title">Bone White</div>
-          <div class="swatch-hex"><span>#F4F4F5</span><span>Light Canvas</span></div>
+        <div class="swatch-card" onclick="copyHex('#F5F5F5')">
+          <div class="swatch-box" style="background-color: #F5F5F5;"></div>
+          <div class="swatch-title">Cloud White</div>
+          <div class="swatch-hex"><span>#F5F5F5</span><span>Primary Text</span></div>
         </div>
 
-        <div class="swatch-card" style="border-color: rgba(212, 255, 0, 0.4);" onclick="copyHex('#D4FF00')">
-          <div class="swatch-box" style="background-color: #D4FF00;"></div>
-          <div class="swatch-title" style="color: var(--color-flash);">Electric Volt</div>
-          <div class="swatch-hex"><span style="color: var(--color-flash);">#D4FF00</span><span>Flash Accent</span></div>
-        </div>
-
-        <div class="swatch-card" style="border-color: rgba(255, 70, 37, 0.4);" onclick="copyHex('#FF4625')">
-          <div class="swatch-box" style="background-color: #FF4625;"></div>
-          <div class="swatch-title" style="color: var(--color-signal);">Signal Orange</div>
-          <div class="swatch-hex"><span style="color: var(--color-signal);">#FF4625</span><span>Utility Alert</span></div>
+        <div class="swatch-card" onclick="copyHex('#FFFFFF')">
+          <div class="swatch-box" style="background-color: #FFFFFF;"></div>
+          <div class="swatch-title" style="color: #FFFFFF;">Pure White</div>
+          <div class="swatch-hex"><span>#FFFFFF</span><span>Contrast</span></div>
         </div>
       </div>
     </section>
@@ -689,62 +761,62 @@
       <div class="type-specimen">
         <div class="type-row">
           <div class="type-meta">display-2xl (80px / 800)</div>
-          <div class="type-render-2xl">ARCHITECTURAL KINETICS</div>
+          <div class="type-render-2xl">LIGHTNING STRIKE</div>
         </div>
         <div class="type-row">
           <div class="type-meta">display-xl (56px / 800)</div>
-          <div class="type-render-xl">EDITION 01 // AUTUMN 2026</div>
+          <div class="type-render-xl">EDITION 01 // CRIMSON CAPSULE</div>
         </div>
         <div class="type-row">
           <div class="type-meta">heading-lg (36px / 700)</div>
-          <div class="type-render-lg">MONOCHROME SILHOUETTES</div>
+          <div class="type-render-lg">HIGH-VELOCITY ARCHITECTURE</div>
         </div>
         <div class="type-row">
           <div class="type-meta">body-base (15px / 400)</div>
           <div class="type-render-body">
-            Heavyweight 480GSM double-face cotton fleece engineered with a drop-shoulder drape and structural boxy profile. Designed with architectural precision and high-contrast editorial poise.
+            Heavyweight 480GSM double-face cotton fleece engineered with a drop-shoulder drape and structural boxy profile. Infused with directional Flash Red detailing and nocturnal crimson depth.
           </div>
         </div>
         <div class="type-row">
-          <div class="type-meta">meta-mono (11px / 500)</div>
-          <div class="type-render-mono">[ARCHIVE: FW-2026-DROP01] // COORD: 35.6762° N, 139.6503° E // STATUS: ALLOCATED</div>
+          <div class="type-meta">meta-mono (11px / 600)</div>
+          <div class="type-render-mono">[ARCHIVE: FW-STRIKE-01] // COORD: 35.6762° N, 139.6503° E // STATUS: IGNITED</div>
         </div>
       </div>
     </section>
 
-    <!-- Photography & Art Direction -->
+    <!-- Visual Language & Art Direction -->
     <section id="art-direction">
       <div class="section-header">
         <div>
-          <span class="meta-tag">EDITORIAL VISION</span>
-          <h2 class="section-title">Art Direction Principles</h2>
+          <span class="meta-tag">VISUAL LANGUAGE</span>
+          <h2 class="section-title">Kinetic Energy & Lighting</h2>
         </div>
-        <span class="section-desc">Campaign & Product Framing</span>
+        <span class="section-desc">Directional Movement & Illumination</span>
       </div>
 
       <div class="quick-stats">
         <div class="stat-card">
-          <div class="stat-label">Model Direction</div>
-          <div class="stat-value" style="font-size: 14px; font-weight: 400; line-height: 1.5; color: var(--color-text-secondary); margin-top: 8px;">
-            Self-possessed, detached, sculptural stillness. No smiling. Poses emphasize garment silhouette, shoulder drop, and fabric geometry.
+          <div class="stat-label">Directional Speed Lines</div>
+          <div class="stat-value" style="font-size: 14px; font-weight: 400; line-height: 1.5; color: var(--color-ash); margin-top: 8px;">
+            Sharp 45° and 60° vector speed lines that convey forward acceleration and electrical ignition without juvenile clipart.
           </div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">Lighting System</div>
-          <div class="stat-value" style="font-size: 14px; font-weight: 400; line-height: 1.5; color: var(--color-text-secondary); margin-top: 8px;">
-            Directional hard key-light with razor-edged cast shadows against brutalist concrete or deep velvet studio black falloff.
+          <div class="stat-label">Cinematic Lighting</div>
+          <div class="stat-value" style="font-size: 14px; font-weight: 400; line-height: 1.5; color: var(--color-ash); margin-top: 8px;">
+            Dual lighting: sharp white frontal key light for true garment texture, paired with low-key red-orange rim light along silhouette contours.
           </div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">Aspect Ratios</div>
-          <div class="stat-value" style="font-size: 14px; font-weight: 400; line-height: 1.5; color: var(--color-text-secondary); margin-top: 8px;">
-            16:9 for desktop hero cinematics, 4:5 for mobile editorial lookbooks, 3:4 for e-commerce product cards, 1:1 for grid thumbnails.
+          <div class="stat-label">Color Dominance Rule</div>
+          <div class="stat-value" style="font-size: 14px; font-weight: 400; line-height: 1.5; color: var(--color-ash); margin-top: 8px;">
+            Flash Red (#C41420) is the primary brand accent. Electric Orange and Lightning Gold are strictly controlled highlights (&le;6% combined).
           </div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">Restraint Mandate</div>
-          <div class="stat-value" style="font-size: 14px; font-weight: 400; line-height: 1.5; color: var(--color-text-secondary); margin-top: 8px;">
-            Electric Volt (#D4FF00) strictly restricted to &le;2% screen area. No aggressive sales popups or discount ribbons.
+          <div class="stat-label">Editorial Atmosphere</div>
+          <div class="stat-value" style="font-size: 14px; font-weight: 400; line-height: 1.5; color: var(--color-ash); margin-top: 8px;">
+            Deep obsidian black and dark crimson foundations create a powerful, nocturnal mood that feels futuristic, athletic, and unmistakable.
           </div>
         </div>
       </div>
@@ -754,8 +826,8 @@
   <div id="toast">Copied to clipboard</div>
 
   <footer>
-    <div>FLASHWEAR BRAND IDENTITY &bull; ESTABLISHED 2026</div>
-    <div>PHASE 01 COMPLETED // PROCEED TO PHASE 02</div>
+    <div>FLASHWEAR BRAND IDENTITY &bull; LIGHTNING STRIKE &bull; ESTABLISHED 2026</div>
+    <div>PHASE 01 CORRECTION COMPLETED // READY FOR PHASE 02</div>
   </footer>
 
   <script>
