@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLASHWEAR — Brand Identity & Visual Direction (Phase 01)</title>
+  <link rel="icon" type="image/svg+xml" href="/public/assets/brand/flashwear-favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-canvas: #0A0A0B;
+      --color-surface-base: #141416;
+      --color-surface-raised: #1C1C1F;
+      --color-border-subtle: #1F1F24;
+      --color-border-default: #28282D;
+      --color-border-strong: #3F3F46;
+      --color-text-primary: #FAFAFA;
+      --color-text-secondary: #A1A1AA;
+      --color-text-muted: #71717A;
+      --color-flash: #D4FF00;
+      --color-signal: #FF4625;
+      --color-light-canvas: #F4F4F5;
+      --color-light-surface: #FFFFFF;
+      --color-light-border: #E4E4E7;
+      
+      --font-display: 'Syne', 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Space Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--color-canvas);
+      color: var(--color-text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 120px;
+    }
+
+    /* Architectural Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 10, 11, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--color-border-default);
+      padding: 18px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-nav-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand-badge {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      background: rgba(212, 255, 0, 0.08);
+      border: 1px solid rgba(212, 255, 0, 0.3);
+      color: var(--color-flash);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--color-flash);
+      border-radius: 50%;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.3; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.15); }
+      100% { opacity: 0.3; transform: scale(0.9); }
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    nav a {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 150ms ease;
+    }
+
+    nav a:hover {
+      color: var(--color-text-primary);
+    }
+
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    /* Hero Banner */
+    .hero-section {
+      padding: 100px 0 80px 0;
+      border-bottom: 1px solid var(--color-border-default);
+    }
+
+    .meta-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      color: var(--color-flash);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    h1.hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 6vw, 84px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-lead {
+      color: var(--color-text-secondary);
+      font-size: 20px;
+      font-weight: 400;
+      max-width: 720px;
+      margin-bottom: 40px;
+      line-height: 1.5;
+    }
+
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .stat-card {
+      background: var(--color-surface-base);
+      border: 1px solid var(--color-border-default);
+      padding: 20px 24px;
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--color-text-muted);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--color-border-default);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .section-desc {
+      color: var(--color-text-muted);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* Asset Grid */
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 24px;
+    }
+
+    .asset-card {
+      background: var(--color-surface-base);
+      border: 1px solid var(--color-border-default);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .asset-preview {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      position: relative;
+    }
+
+    .asset-preview.dark {
+      background-color: var(--color-canvas);
+    }
+
+    .asset-preview.light {
+      background-color: var(--color-light-canvas);
+    }
+
+    .asset-info {
+      padding: 20px 24px;
+      border-top: 1px solid var(--color-border-default);
+      background: var(--color-surface-base);
+    }
+
+    .asset-name {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .asset-badge {
+      font-size: 10px;
+      padding: 2px 6px;
+      background: var(--color-surface-raised);
+      color: var(--color-text-muted);
+      border-radius: 2px;
+    }
+
+    .asset-desc {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .asset-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--color-flash);
+      text-decoration: none;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* Color Swatches */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 16px;
+    }
+
+    .swatch-card {
+      background: var(--color-surface-base);
+      border: 1px solid var(--color-border-default);
+      padding: 16px;
+      cursor: pointer;
+      transition: border-color 150ms ease;
+    }
+
+    .swatch-card:hover {
+      border-color: var(--color-flash);
+    }
+
+    .swatch-box {
+      height: 72px;
+      border-radius: 2px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: flex-end;
+      padding: 8px;
+    }
+
+    .swatch-title {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .swatch-hex {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--color-text-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Typography Waterfall */
+    .type-specimen {
+      background: var(--color-surface-base);
+      border: 1px solid var(--color-border-default);
+      padding: 40px;
+    }
+
+    .type-row {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--color-border-subtle);
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      align-items: baseline;
+      gap: 24px;
+    }
+
+    .type-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .type-meta {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--color-text-muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .type-render-2xl {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .type-render-xl {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+
+    .type-render-lg {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .type-render-body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+      max-width: 800px;
+    }
+
+    .type-render-mono {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-flash);
+    }
+
+    /* Copy Toast Notification */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--color-flash);
+      color: var(--color-canvas);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 10px 18px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 200ms ease;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    footer {
+      padding: 60px 48px;
+      background: var(--color-surface-base);
+      border-top: 1px solid var(--color-border-default);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--color-text-muted);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      header { padding: 16px 20px; }
+      nav { display: none; }
+      .container { padding: 0 20px; }
+      .type-row { grid-template-columns: 1fr; gap: 8px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand-nav-left">
+      <img src="/public/assets/brand/flashwear-wordmark-dark.svg" alt="FLASHWEAR" height="22">
+      <span class="brand-badge"><span class="pulse-dot"></span>PHASE 01 // SPECIFICATION</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#logos">Logo Assets</a></li>
+        <li><a href="#palette">Color Palette</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#art-direction">Art Direction</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero-section" id="overview">
+      <span class="meta-tag">FOUNDATION 01/30 // BRAND CONSTITUTION</span>
+      <h1 class="hero-title">FORM AT HIGH VELOCITY.</h1>
+      <p class="hero-lead">
+        FLASHWEAR establishes a modern architectural streetwear identity—synthesizing luxury editorial restraint, kinetic urban momentum, and precision Swiss layout discipline.
+      </p>
+
+      <div class="quick-stats">
+        <div class="stat-card">
+          <div class="stat-label">Brand Positioning</div>
+          <div class="stat-value">Architectural Streetwear</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Core Aesthetic</div>
+          <div class="stat-value">The New Monochrome</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Signature Accent</div>
+          <div class="stat-value" style="color: var(--color-flash);">Electric Volt (#D4FF00)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Verified SVG Assets</div>
+          <div class="stat-value">8 Production Marks</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logo Assets Section -->
+    <section id="logos">
+      <div class="section-header">
+        <div>
+          <span class="meta-tag">VECTOR IDENTITY</span>
+          <h2 class="section-title">Master Logo Suite</h2>
+        </div>
+        <span class="section-desc">8 Scalable Production SVGs</span>
+      </div>
+
+      <div class="asset-grid">
+        <!-- 1. Wordmark Dark -->
+        <div class="asset-card">
+          <div class="asset-preview dark">
+            <img src="/public/assets/brand/flashwear-wordmark-dark.svg" alt="Wordmark Dark" style="max-width: 85%; height: auto;">
+          </div>
+          <div class="asset-info">
+            <div class="asset-name">flashwear-wordmark-dark.svg <span class="asset-badge">Primary</span></div>
+            <div class="asset-desc">Optic White on Obsidian Black. For desktop headers and hero mastheads.</div>
+            <a href="/public/assets/brand/flashwear-wordmark-dark.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 2. Wordmark Light -->
+        <div class="asset-card">
+          <div class="asset-preview light">
+            <img src="/public/assets/brand/flashwear-wordmark-light.svg" alt="Wordmark Light" style="max-width: 85%; height: auto;">
+          </div>
+          <div class="asset-info">
+            <div class="asset-name">flashwear-wordmark-light.svg <span class="asset-badge">Primary</span></div>
+            <div class="asset-desc">Obsidian Black on Bone White. For light mode modules and invoices.</div>
+            <a href="/public/assets/brand/flashwear-wordmark-light.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 3. Monogram Kinetic -->
+        <div class="asset-card">
+          <div class="asset-preview dark">
+            <img src="/public/assets/brand/flashwear-monogram-kinetic.svg" alt="Monogram Kinetic" style="max-width: 100px; height: auto;">
+          </div>
+          <div class="asset-info">
+            <div class="asset-name">flashwear-monogram-kinetic.svg <span class="asset-badge" style="color: var(--color-flash);">Kinetic</span></div>
+            <div class="asset-desc">FW Monogram with signature Electric Volt (#D4FF00) dynamic flash shard.</div>
+            <a href="/public/assets/brand/flashwear-monogram-kinetic.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 4. Monogram Dark -->
+        <div class="asset-card">
+          <div class="asset-preview dark">
+            <img src="/public/assets/brand/flashwear-monogram-dark.svg" alt="Monogram Dark" style="max-width: 100px; height: auto;">
+          </div>
+          <div class="asset-info">
+            <div class="asset-name">flashwear-monogram-dark.svg <span class="asset-badge">Monochrome</span></div>
+            <div class="asset-desc">Optic White monolithic mark. For compact mobile navigation and dark footers.</div>
+            <a href="/public/assets/brand/flashwear-monogram-dark.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 5. Monogram Light -->
+        <div class="asset-card">
+          <div class="asset-preview light">
+            <img src="/public/assets/brand/flashwear-monogram-light.svg" alt="Monogram Light" style="max-width: 100px; height: auto;">
+          </div>
+          <div class="asset-info">
+            <div class="asset-name">flashwear-monogram-light.svg <span class="asset-badge">Monochrome</span></div>
+            <div class="asset-desc">Obsidian Black monolithic mark. For printed tags, garments, and light UI.</div>
+            <a href="/public/assets/brand/flashwear-monogram-light.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 6. Horizontal Lockup Dark -->
+        <div class="asset-card">
+          <div class="asset-preview dark">
+            <img src="/public/assets/brand/flashwear-lockup-dark.svg" alt="Lockup Dark" style="max-width: 90%; height: auto;">
+          </div>
+          <div class="asset-info">
+            <div class="asset-name">flashwear-lockup-dark.svg <span class="asset-badge">Lockup</span></div>
+            <div class="asset-desc">Monogram + Wordmark + Archival Tag. For footer anchors and splash screens.</div>
+            <a href="/public/assets/brand/flashwear-lockup-dark.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 7. Horizontal Lockup Light -->
+        <div class="asset-card">
+          <div class="asset-preview light">
+            <img src="/public/assets/brand/flashwear-lockup-light.svg" alt="Lockup Light" style="max-width: 90%; height: auto;">
+          </div>
+          <div class="asset-info">
+            <div class="asset-name">flashwear-lockup-light.svg <span class="asset-badge">Lockup</span></div>
+            <div class="asset-desc">Light surface brand lockup for editorial lookbooks and formal media.</div>
+            <a href="/public/assets/brand/flashwear-lockup-light.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 8. Favicon -->
+        <div class="asset-card">
+          <div class="asset-preview dark">
+            <img src="/public/assets/brand/flashwear-favicon.svg" alt="Favicon" style="max-width: 64px; height: auto;">
+          </div>
+          <div class="asset-info">
+            <div class="asset-name">flashwear-favicon.svg <span class="asset-badge">Icon</span></div>
+            <div class="asset-desc">64x64 pixel-aligned rounded icon with kinetic mark for browser tabs.</div>
+            <a href="/public/assets/brand/flashwear-favicon.svg" target="_blank" class="asset-link">Open Vector SVG &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color Palette Section -->
+    <section id="palette">
+      <div class="section-header">
+        <div>
+          <span class="meta-tag">CHROMATIC SPECIFICATION</span>
+          <h2 class="section-title">Color Architecture</h2>
+        </div>
+        <span class="section-desc">Click any swatch to copy HEX</span>
+      </div>
+
+      <div class="swatch-grid">
+        <div class="swatch-card" onclick="copyHex('#0A0A0B')">
+          <div class="swatch-box" style="background-color: #0A0A0B;"></div>
+          <div class="swatch-title">Obsidian Black</div>
+          <div class="swatch-hex"><span>#0A0A0B</span><span>Canvas</span></div>
+        </div>
+
+        <div class="swatch-card" onclick="copyHex('#141416')">
+          <div class="swatch-box" style="background-color: #141416;"></div>
+          <div class="swatch-title">Graphite Carbon</div>
+          <div class="swatch-hex"><span>#141416</span><span>Surface</span></div>
+        </div>
+
+        <div class="swatch-card" onclick="copyHex('#1C1C1F')">
+          <div class="swatch-box" style="background-color: #1C1C1F;"></div>
+          <div class="swatch-title">Deep Onyx</div>
+          <div class="swatch-hex"><span>#1C1C1F</span><span>Raised</span></div>
+        </div>
+
+        <div class="swatch-card" onclick="copyHex('#28282D')">
+          <div class="swatch-box" style="background-color: #28282D;"></div>
+          <div class="swatch-title">Industrial Slate</div>
+          <div class="swatch-hex"><span>#28282D</span><span>Border</span></div>
+        </div>
+
+        <div class="swatch-card" onclick="copyHex('#71717A')">
+          <div class="swatch-box" style="background-color: #71717A;"></div>
+          <div class="swatch-title">Muted Titanium</div>
+          <div class="swatch-hex"><span>#71717A</span><span>Metadata</span></div>
+        </div>
+
+        <div class="swatch-card" onclick="copyHex('#A1A1AA')">
+          <div class="swatch-box" style="background-color: #A1A1AA;"></div>
+          <div class="swatch-title">Silver Stone</div>
+          <div class="swatch-hex"><span>#A1A1AA</span><span>Secondary</span></div>
+        </div>
+
+        <div class="swatch-card" onclick="copyHex('#FAFAFA')">
+          <div class="swatch-box" style="background-color: #FAFAFA;"></div>
+          <div class="swatch-title" style="color: #FAFAFA;">Pure Alabaster</div>
+          <div class="swatch-hex"><span>#FAFAFA</span><span>Text</span></div>
+        </div>
+
+        <div class="swatch-card" onclick="copyHex('#F4F4F5')">
+          <div class="swatch-box" style="background-color: #F4F4F5;"></div>
+          <div class="swatch-title">Bone White</div>
+          <div class="swatch-hex"><span>#F4F4F5</span><span>Light Canvas</span></div>
+        </div>
+
+        <div class="swatch-card" style="border-color: rgba(212, 255, 0, 0.4);" onclick="copyHex('#D4FF00')">
+          <div class="swatch-box" style="background-color: #D4FF00;"></div>
+          <div class="swatch-title" style="color: var(--color-flash);">Electric Volt</div>
+          <div class="swatch-hex"><span style="color: var(--color-flash);">#D4FF00</span><span>Flash Accent</span></div>
+        </div>
+
+        <div class="swatch-card" style="border-color: rgba(255, 70, 37, 0.4);" onclick="copyHex('#FF4625')">
+          <div class="swatch-box" style="background-color: #FF4625;"></div>
+          <div class="swatch-title" style="color: var(--color-signal);">Signal Orange</div>
+          <div class="swatch-hex"><span style="color: var(--color-signal);">#FF4625</span><span>Utility Alert</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography Specimen Section -->
+    <section id="typography">
+      <div class="section-header">
+        <div>
+          <span class="meta-tag">TYPOGRAPHIC SCALE</span>
+          <h2 class="section-title">Type Hierarchy & Fonts</h2>
+        </div>
+        <span class="section-desc">Syne / Inter / JetBrains Mono</span>
+      </div>
+
+      <div class="type-specimen">
+        <div class="type-row">
+          <div class="type-meta">display-2xl (80px / 800)</div>
+          <div class="type-render-2xl">ARCHITECTURAL KINETICS</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">display-xl (56px / 800)</div>
+          <div class="type-render-xl">EDITION 01 // AUTUMN 2026</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">heading-lg (36px / 700)</div>
+          <div class="type-render-lg">MONOCHROME SILHOUETTES</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">body-base (15px / 400)</div>
+          <div class="type-render-body">
+            Heavyweight 480GSM double-face cotton fleece engineered with a drop-shoulder drape and structural boxy profile. Designed with architectural precision and high-contrast editorial poise.
+          </div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">meta-mono (11px / 500)</div>
+          <div class="type-render-mono">[ARCHIVE: FW-2026-DROP01] // COORD: 35.6762° N, 139.6503° E // STATUS: ALLOCATED</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photography & Art Direction -->
+    <section id="art-direction">
+      <div class="section-header">
+        <div>
+          <span class="meta-tag">EDITORIAL VISION</span>
+          <h2 class="section-title">Art Direction Principles</h2>
+        </div>
+        <span class="section-desc">Campaign & Product Framing</span>
+      </div>
+
+      <div class="quick-stats">
+        <div class="stat-card">
+          <div class="stat-label">Model Direction</div>
+          <div class="stat-value" style="font-size: 14px; font-weight: 400; line-height: 1.5; color: var(--color-text-secondary); margin-top: 8px;">
+            Self-possessed, detached, sculptural stillness. No smiling. Poses emphasize garment silhouette, shoulder drop, and fabric geometry.
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Lighting System</div>
+          <div class="stat-value" style="font-size: 14px; font-weight: 400; line-height: 1.5; color: var(--color-text-secondary); margin-top: 8px;">
+            Directional hard key-light with razor-edged cast shadows against brutalist concrete or deep velvet studio black falloff.
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Aspect Ratios</div>
+          <div class="stat-value" style="font-size: 14px; font-weight: 400; line-height: 1.5; color: var(--color-text-secondary); margin-top: 8px;">
+            16:9 for desktop hero cinematics, 4:5 for mobile editorial lookbooks, 3:4 for e-commerce product cards, 1:1 for grid thumbnails.
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Restraint Mandate</div>
+          <div class="stat-value" style="font-size: 14px; font-weight: 400; line-height: 1.5; color: var(--color-text-secondary); margin-top: 8px;">
+            Electric Volt (#D4FF00) strictly restricted to &le;2% screen area. No aggressive sales popups or discount ribbons.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast">Copied to clipboard</div>
+
+  <footer>
+    <div>FLASHWEAR BRAND IDENTITY &bull; ESTABLISHED 2026</div>
+    <div>PHASE 01 COMPLETED // PROCEED TO PHASE 02</div>
+  </footer>
+
+  <script>
+    function copyHex(hex) {
+      navigator.clipboard.writeText(hex).then(() => {
+        const toast = document.getElementById('toast');
+        toast.textContent = `COPIED ${hex} TO CLIPBOARD`;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+      });
+    }
+  </script>
+</body>
+</html>
