@@ -1,6 +1,8 @@
 /**
  * FLASHWEAR FRONTEND ARCHITECTURE — APPLICATION BOOTSTRAPPER
- * Orchestrates application lifecycle, event listening, and layout initialization.
+ * Creative Direction: LIGHTNING STRIKE
+ * Orchestrates application lifecycle, layout initialization, announcement bar,
+ * main navigation, and event listening.
  */
 
 import { appConfig } from './config.js';
@@ -9,6 +11,8 @@ import { eventBus } from '../utils/events.js';
 import { EVENTS } from '../utils/constants.js';
 import { LayoutShell } from '../components/layout/layout-shell.js';
 import { sectionRegistry } from '../components/sections/section-registry.js';
+import { AnnouncementBar } from '../components/navigation/announcement-bar.js';
+import { MainNavigation } from '../components/navigation/main-navigation.js';
 
 export class FlashwearApp {
   constructor() {
@@ -16,6 +20,8 @@ export class FlashwearApp {
     this.store = store;
     this.eventBus = eventBus;
     this.layout = null;
+    this.announcementBar = null;
+    this.mainNavigation = null;
     this.isInitialized = false;
   }
 
@@ -33,11 +39,19 @@ export class FlashwearApp {
       return this;
     }
 
-    // Initialize Layout Scaffold
+    // 1. Initialize Layout Scaffold
     this.layout = new LayoutShell(root);
     this.layout.renderScaffold();
 
-    // Attach global listeners
+    // 2. Initialize Announcement Bar
+    this.announcementBar = new AnnouncementBar();
+    this.announcementBar.mount(this.layout.getSlot('announcement'));
+
+    // 3. Initialize Main Navigation (Desktop & Mobile)
+    this.mainNavigation = new MainNavigation();
+    this.mainNavigation.mount(this.layout.getSlot('header'));
+
+    // 4. Attach global listeners
     this._setupGlobalListeners();
 
     this.isInitialized = true;

@@ -4,7 +4,7 @@
   "description": "FLASHWEAR — Premium High-Velocity Streetwear E-Commerce Homepage",
   "type": "module",
   "scripts": {
-    "test": "node tests/architecture.test.js",
+    "test": "node tests/architecture.test.js && node tests/navigation.test.js",
     "dev": "python -m http.server 3000",
     "start": "python -m http.server 3000"
   },

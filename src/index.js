@@ -18,6 +18,7 @@ export { createButtonMarkup } from './components/ui/button.js';
 export { createBadgeMarkup } from './components/ui/badge.js';
 export { LayoutShell } from './components/layout/layout-shell.js';
 export { sectionRegistry, SectionRegistry } from './components/sections/section-registry.js';
+export { AnnouncementBar, MainNavigation, MobileMenu, ICONS } from './components/navigation/index.js';
 
 // Utilities
 export * as formatters from './utils/formatters.js';

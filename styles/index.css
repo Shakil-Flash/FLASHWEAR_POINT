@@ -6,6 +6,7 @@
 
 @import './tokens.css';
 @import './components.css';
+@import './navigation.css';
 
 /* ==========================================================================
    CSS RESET & NORMALIZE

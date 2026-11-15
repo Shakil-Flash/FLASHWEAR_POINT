@@ -8,7 +8,8 @@ export const STORAGE_KEYS = {
   WISHLIST: 'flashwear_wishlist_v1',
   RECENTLY_VIEWED: 'flashwear_recent_v1',
   CURRENCY: 'flashwear_currency_pref',
-  THEME: 'flashwear_theme_mode'
+  THEME: 'flashwear_theme_mode',
+  ANNOUNCEMENT_DISMISSED: 'flashwear_announcement_dismissed_v1'
 };
 
 export const BREAKPOINTS = {
@@ -32,7 +33,9 @@ export const EVENTS = {
   WISHLIST_UPDATED: 'flashwear:wishlist_updated',
   SEARCH_QUERY_CHANGED: 'flashwear:search_query_changed',
   QUICK_VIEW_REQUESTED: 'flashwear:quick_view_requested',
-  NOTIFICATION_EMITTED: 'flashwear:notification_emitted'
+  NOTIFICATION_EMITTED: 'flashwear:notification_emitted',
+  ANNOUNCEMENT_DISMISSED: 'flashwear:announcement_dismissed',
+  MOBILE_MENU_TOGGLED: 'flashwear:mobile_menu_toggled'
 };
 
 export const BRAND_DEFAULTS = {

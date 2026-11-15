@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FLASHWEAR — Design System & Tokens (Phase 02) // Lightning Strike</title>
+  <title>FLASHWEAR — Announcement Bar & Main Navigation (Phase 04) // Lightning Strike</title>
   <link rel="icon" type="image/svg+xml" href="/public/assets/brand/flashwear-favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,6 @@
   <!-- Centralized Production Design System Entrypoint -->
   <link rel="stylesheet" href="/styles/index.css">
   <style>
-    /* Specific Showcase Presentation Helpers */
     body {
       background-image: 
         radial-gradient(circle at 85% 15%, rgba(101, 11, 18, 0.28) 0%, transparent 50%),
@@ -19,46 +18,8 @@
       background-attachment: fixed;
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(9, 9, 11, 0.94);
-      backdrop-filter: blur(18px);
-      border-bottom: var(--border-width-hairline) solid var(--border-default);
-      padding: var(--space-4) var(--space-12);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand-nav-left {
-      display: flex;
-      align-items: center;
-      gap: var(--space-5);
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: var(--space-6);
-    }
-
-    nav a {
-      color: var(--text-secondary);
-      font-size: var(--text-btn);
-      font-weight: var(--font-weight-semibold);
-      letter-spacing: var(--tracking-wider);
-      text-transform: uppercase;
-      transition: var(--transition-fast);
-    }
-
-    nav a:hover {
-      color: var(--accent-primary);
-    }
-
     .hero-section {
-      padding: var(--space-24) 0 var(--space-20) 0;
+      padding: var(--space-20) 0 var(--space-16) 0;
       border-bottom: var(--border-width-hairline) solid var(--border-default);
       position: relative;
     }
@@ -92,6 +53,7 @@
       border: var(--border-width-hairline) solid var(--border-default);
       padding: var(--space-5) var(--space-6);
       position: relative;
+      border-radius: var(--radius-xs);
     }
 
     .stat-card.active::before {
@@ -114,6 +76,33 @@
       justify-content: space-between;
       align-items: flex-end;
       margin-bottom: var(--space-10);
+    }
+
+    /* Sandbox Presentation */
+    .sandbox-panel {
+      background: var(--bg-secondary);
+      border: var(--border-width-hairline) solid var(--border-default);
+      border-radius: var(--radius-sm);
+      padding: var(--space-8);
+      margin-bottom: var(--space-8);
+    }
+
+    .sandbox-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-4);
+      margin-top: var(--space-4);
+    }
+
+    .sandbox-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-meta-mono);
+      color: var(--text-secondary);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      margin-bottom: var(--space-2);
+      display: block;
     }
 
     /* Swatches */
@@ -191,50 +180,6 @@
       background: var(--bg-secondary);
     }
 
-    /* Component Sandbox Presentation */
-    .sandbox-panel {
-      background: var(--bg-secondary);
-      border: var(--border-width-hairline) solid var(--border-default);
-      border-radius: var(--radius-sm);
-      padding: var(--space-8);
-      margin-bottom: var(--space-8);
-    }
-
-    .sandbox-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: var(--space-4);
-      margin-top: var(--space-4);
-    }
-
-    .sandbox-label {
-      font-family: var(--font-mono);
-      font-size: var(--text-meta-mono);
-      color: var(--text-secondary);
-      letter-spacing: var(--tracking-wider);
-      text-transform: uppercase;
-      margin-bottom: var(--space-2);
-      display: block;
-    }
-
-    /* Spacing Visualizer */
-    .space-bar-wrap {
-      display: flex;
-      align-items: center;
-      gap: var(--space-4);
-      padding: var(--space-2) 0;
-      border-bottom: var(--border-width-hairline) solid var(--border-subtle);
-      font-family: var(--font-mono);
-      font-size: var(--text-meta-mono);
-    }
-
-    .space-bar {
-      height: 14px;
-      background: linear-gradient(90deg, var(--color-flash-red), var(--color-lightning-gold));
-      border-radius: var(--radius-xs);
-    }
-
     /* Copy Toast */
     #toast {
       position: fixed;
@@ -262,7 +207,7 @@
       transform: translateY(0);
     }
 
-    footer {
+    footer.showcase-footer {
       padding: var(--space-16) var(--space-12);
       background: var(--bg-secondary);
       border-top: var(--border-width-hairline) solid var(--border-default);
@@ -277,297 +222,118 @@
     }
 
     @media (max-width: 768px) {
-      header { padding: var(--space-4); }
-      nav { display: none; }
-      footer { flex-direction: column; gap: var(--space-4); text-align: center; }
+      footer.showcase-footer { flex-direction: column; gap: var(--space-4); text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="brand-nav-left">
-      <img src="/public/assets/brand/flashwear-wordmark-dark.svg" alt="FLASHWEAR" height="22">
-      <span class="badge badge-strike"><span class="pulse-dot"></span>PHASE 02 // DESIGN SYSTEM</span>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#tokens">Tokens</a></li>
-        <li><a href="#components">Components</a></li>
-        <li><a href="#typography">Typography</a></li>
-        <li><a href="#spacing">Spacing</a></li>
-        <li><a href="#logos">Logo Assets</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- ========================================================================
+       PHASE 04 LIVE APPLICATION SHELL (ANNOUNCEMENT BAR & MAIN NAVIGATION)
+       ======================================================================== -->
+  <div id="app">
+    <div id="fw-announcement-slot" class="fw-layout-slot" role="region" aria-label="Announcement"></div>
+    <header id="fw-header-slot" class="fw-layout-slot" role="banner"></header>
+    <main id="fw-main-content" class="fw-layout-slot" role="main"></main>
+  </div>
 
+  <!-- Showcase Content Container -->
   <div class="container">
     <!-- Hero Overview -->
     <section class="hero-section" id="overview">
       <div class="hero-speed-line"></div>
-      <span class="meta-mono text-accent">// PHASE 02 DESIGN SYSTEM &bull; PRODUCTION READY</span>
+      <span class="meta-mono text-accent">// PHASE 04 IMPLEMENTATION &bull; ACTIVE &amp; FUNCTIONAL</span>
       <h1 class="display-2xl" style="margin-top: var(--space-3); margin-bottom: var(--space-4);">
-        DESIGN SYSTEM: <span class="strike-highlight">LIGHTNING STRIKE</span>
+        ANNOUNCEMENT &amp; <span class="strike-highlight">MAIN NAVIGATION</span>
       </h1>
       <p class="body-lg text-secondary" style="max-width: 760px;">
-        Centralized, tokenized design infrastructure for the FLASHWEAR digital flagship. Built upon deep obsidian black, dark crimson, flash red, and electric golden-yellow kinetic accents.
+        Production-ready announcement bar and responsive header navigation. Features rotating promotional dispatches, real-time reactive cart and wishlist badges, mobile slide-over drawer, and sticky scroll behavior.
       </p>
 
       <div class="quick-stats">
         <div class="stat-card active">
-          <div class="meta-mono text-muted">Token Architecture</div>
-          <div style="font-weight: 600; color: var(--color-flash-red); margin-top: 4px;">styles/tokens.css</div>
+          <div class="meta-mono text-muted">Announcement Bar</div>
+          <div style="font-weight: 600; color: var(--color-flash-red); margin-top: 4px;">Dismissible + Rotating</div>
         </div>
         <div class="stat-card">
-          <div class="meta-mono text-muted">Component Foundations</div>
-          <div style="font-weight: 600; color: var(--text-primary); margin-top: 4px;">styles/components.css</div>
+          <div class="meta-mono text-muted">Desktop Navigation</div>
+          <div style="font-weight: 600; color: var(--text-primary); margin-top: 4px;">5 Center Links + Live Badges</div>
         </div>
         <div class="stat-card">
-          <div class="meta-mono text-muted">Primary Brand Accent</div>
-          <div style="font-weight: 600; color: var(--color-flash-red); margin-top: 4px;">Flash Red (#C41420)</div>
+          <div class="meta-mono text-muted">Mobile Experience</div>
+          <div style="font-weight: 600; color: var(--color-lightning-gold); margin-top: 4px;">Slide-Over Drawer + Focus Trap</div>
         </div>
         <div class="stat-card">
-          <div class="meta-mono text-muted">Documentation</div>
-          <div style="font-weight: 600; color: var(--color-lightning-gold); margin-top: 4px;">docs/design-system/</div>
+          <div class="meta-mono text-muted">State Reactivity</div>
+          <div style="font-weight: 600; color: var(--color-flash-red); margin-top: 4px;">Live Cart &amp; Wishlist Sync</div>
         </div>
       </div>
     </section>
 
-    <!-- Interactive Component Archetypes -->
-    <section id="components">
+    <!-- Phase 04 Navigation Interactive Testing Sandbox -->
+    <section id="navigation-sandbox">
       <div class="section-header">
         <div>
-          <span class="meta-mono text-accent">// SECTION 8 SPECIFICATIONS</span>
-          <h2 class="heading-lg">Component Foundations</h2>
+          <span class="meta-mono text-accent">// COMPONENT VERIFICATION</span>
+          <h2 class="heading-lg">Navigation &amp; State Controls</h2>
         </div>
-        <span class="meta-mono text-secondary">Interactive State Verification</span>
+        <span class="meta-mono text-secondary">Interactive Testing Controls</span>
       </div>
 
-      <!-- Button Showcase -->
       <div class="sandbox-panel">
-        <span class="sandbox-label">1. Button Hierarchy & Interactive States</span>
+        <span class="sandbox-label">1. Live Reactive Badge Updates</span>
+        <p class="body-sm text-secondary" style="margin-bottom: var(--space-4);">
+          Click to simulate adding items to the cart or wishlist. Observe the badge count on the top navigation update in real time.
+        </p>
         <div class="sandbox-row">
-          <button class="btn btn-primary">Primary Flash Red &rarr;</button>
-          <button class="btn btn-secondary">Secondary Crimson</button>
-          <button class="btn btn-outline">Outline Hairline</button>
-          <button class="btn btn-ghost">Ghost Link &nearr;</button>
-          <button class="btn btn-icon" aria-label="Action">&plus;</button>
-          <button class="btn btn-primary" disabled>Disabled State</button>
-        </div>
-        <div class="sandbox-row" style="margin-top: var(--space-4); border-top: var(--border-width-hairline) solid var(--border-subtle); padding-top: var(--space-4);">
-          <span class="meta-mono text-muted">Sizing scale:</span>
-          <button class="btn btn-primary btn-sm">Small (34px)</button>
-          <button class="btn btn-primary">Medium (44px)</button>
-          <button class="btn btn-primary btn-lg">Large (52px)</button>
+          <button type="button" class="btn btn-primary" id="btn-test-add-cart">Add Hoodie to Bag (+1)</button>
+          <button type="button" class="btn btn-secondary" id="btn-test-clear-cart">Clear Bag</button>
+          <button type="button" class="btn btn-outline" id="btn-test-toggle-wishlist">Toggle Wishlist Item</button>
+          <button type="button" class="btn btn-secondary" id="btn-test-open-mobile">Open Mobile Menu</button>
+          <button type="button" class="btn btn-ghost" id="btn-test-reset-announcement">Reset Announcement Bar</button>
         </div>
       </div>
 
-      <!-- Badges & Status Pills -->
       <div class="sandbox-panel">
-        <span class="sandbox-label">2. Badges, Status Pills & Archival Metadata</span>
-        <div class="sandbox-row">
-          <span class="badge badge-strike"><span class="pulse-dot"></span>● LIGHTNING STRIKE // LIVE</span>
-          <span class="badge badge-edition">[EDITION 01 // ARCHIVE]</span>
-          <span class="badge badge-amber">● WARM AMBER CAPSULE</span>
-          <span class="badge badge-soldout">ARCHIVE ALLOCATION: DEPLETED</span>
-        </div>
-      </div>
-
-      <!-- Form Controls & Inputs -->
-      <div class="sandbox-panel">
-        <span class="sandbox-label">3. Form Controls & Field States</span>
+        <span class="sandbox-label">2. Navigation Verification Criteria</span>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-4); margin-top: var(--space-3);">
-          <div>
-            <span class="meta-mono text-muted" style="margin-bottom: 4px; display: block;">Standard Input</span>
-            <input type="text" class="input-field" placeholder="Search archival editions...">
+          <div style="background: var(--bg-primary); padding: var(--space-4); border: var(--border-width-hairline) solid var(--border-subtle); border-radius: var(--radius-xs);">
+            <div class="meta-mono text-brand">Announcement Bar</div>
+            <div class="body-sm text-secondary" style="margin-top: 6px;">
+              Rotating messages from <code>src/data/navigation.js</code>, dismiss button, and LocalStorage persistence.
+            </div>
           </div>
-          <div>
-            <span class="meta-mono text-muted" style="margin-bottom: 4px; display: block;">Active Focus Ring</span>
-            <input type="text" class="input-field" value="Flash Red Active Focus" style="border-color: var(--color-flash-red); box-shadow: var(--glow-red);">
+          <div style="background: var(--bg-primary); padding: var(--space-4); border: var(--border-width-hairline) solid var(--border-subtle); border-radius: var(--radius-xs);">
+            <div class="meta-mono text-accent">Desktop Center Menu</div>
+            <div class="body-sm text-secondary" style="margin-top: 6px;">
+              Exact 5 links: <strong>Shop, New Arrivals, Collections, Best Sellers, Lookbook</strong> with active underline states.
+            </div>
           </div>
-          <div>
-            <span class="meta-mono text-muted" style="margin-bottom: 4px; display: block;">Error State</span>
-            <input type="text" class="input-field input-error" value="Invalid allocation quantity">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Color System -->
-    <section id="tokens">
-      <div class="section-header">
-        <div>
-          <span class="meta-mono text-accent">// SECTION 2 COLOR TOKENS</span>
-          <h2 class="heading-lg">Semantic Color System</h2>
-        </div>
-        <span class="meta-mono text-secondary">Click any swatch to copy CSS variable</span>
-      </div>
-
-      <div class="swatch-grid">
-        <div class="swatch-card" onclick="copyToken('var(--color-obsidian)', '#09090B')">
-          <div class="swatch-box" style="background-color: var(--color-obsidian);"></div>
-          <div class="meta-mono" style="font-weight: 600;">Obsidian Black</div>
-          <div class="meta-mono text-muted" style="display: flex; justify-content: space-between; margin-top: 4px;">
-            <span>#09090B</span><span>--color-obsidian</span>
-          </div>
-        </div>
-
-        <div class="swatch-card" style="border-color: rgba(101, 11, 18, 0.6);" onclick="copyToken('var(--color-deep-crimson)', '#650B12')">
-          <div class="swatch-box" style="background-color: var(--color-deep-crimson);"></div>
-          <div class="meta-mono" style="font-weight: 600;">Deep Crimson</div>
-          <div class="meta-mono text-muted" style="display: flex; justify-content: space-between; margin-top: 4px;">
-            <span>#650B12</span><span>--color-deep-crimson</span>
-          </div>
-        </div>
-
-        <div class="swatch-card" style="border-color: var(--color-flash-red); background: rgba(196, 20, 32, 0.08);" onclick="copyToken('var(--color-flash-red)', '#C41420')">
-          <div class="swatch-box" style="background-color: var(--color-flash-red);"></div>
-          <div class="meta-mono" style="font-weight: 700; color: var(--color-flash-red);">Flash Red (Primary)</div>
-          <div class="meta-mono text-muted" style="display: flex; justify-content: space-between; margin-top: 4px;">
-            <span style="color: var(--color-flash-red);">#C41420</span><span>--color-flash-red</span>
-          </div>
-        </div>
-
-        <div class="swatch-card" style="border-color: rgba(255, 74, 22, 0.5);" onclick="copyToken('var(--color-electric-orange)', '#FF4A16')">
-          <div class="swatch-box" style="background-color: var(--color-electric-orange);"></div>
-          <div class="meta-mono" style="font-weight: 600; color: var(--color-electric-orange);">Electric Orange</div>
-          <div class="meta-mono text-muted" style="display: flex; justify-content: space-between; margin-top: 4px;">
-            <span>#FF4A16</span><span>--color-electric-orange</span>
-          </div>
-        </div>
-
-        <div class="swatch-card" style="border-color: rgba(255, 197, 46, 0.6);" onclick="copyToken('var(--color-lightning-gold)', '#FFC52E')">
-          <div class="swatch-box" style="background-color: var(--color-lightning-gold);"></div>
-          <div class="meta-mono" style="font-weight: 600; color: var(--color-lightning-gold);">Lightning Gold</div>
-          <div class="meta-mono text-muted" style="display: flex; justify-content: space-between; margin-top: 4px;">
-            <span>#FFC52E</span><span>--color-lightning-gold</span>
-          </div>
-        </div>
-
-        <div class="swatch-card" style="border-color: rgba(255, 157, 36, 0.5);" onclick="copyToken('var(--color-warm-amber)', '#FF9D24')">
-          <div class="swatch-box" style="background-color: var(--color-warm-amber);"></div>
-          <div class="meta-mono" style="font-weight: 600; color: var(--color-warm-amber);">Warm Amber</div>
-          <div class="meta-mono text-muted" style="display: flex; justify-content: space-between; margin-top: 4px;">
-            <span>#FF9D24</span><span>--color-warm-amber</span>
-          </div>
-        </div>
-
-        <div class="swatch-card" onclick="copyToken('var(--color-ash-grey)', '#85858D')">
-          <div class="swatch-box" style="background-color: var(--color-ash-grey);"></div>
-          <div class="meta-mono" style="font-weight: 600;">Ash Grey</div>
-          <div class="meta-mono text-muted" style="display: flex; justify-content: space-between; margin-top: 4px;">
-            <span>#85858D</span><span>--color-ash-grey</span>
-          </div>
-        </div>
-
-        <div class="swatch-card" onclick="copyToken('var(--color-cloud-white)', '#F5F5F5')">
-          <div class="swatch-box" style="background-color: var(--color-cloud-white);"></div>
-          <div class="meta-mono" style="font-weight: 600;">Cloud White</div>
-          <div class="meta-mono text-muted" style="display: flex; justify-content: space-between; margin-top: 4px;">
-            <span>#F5F5F5</span><span>--color-cloud-white</span>
-          </div>
-        </div>
-
-        <div class="swatch-card" onclick="copyToken('var(--color-pure-white)', '#FFFFFF')">
-          <div class="swatch-box" style="background-color: var(--color-pure-white);"></div>
-          <div class="meta-mono" style="font-weight: 600; color: var(--color-pure-white);">Pure White</div>
-          <div class="meta-mono text-muted" style="display: flex; justify-content: space-between; margin-top: 4px;">
-            <span>#FFFFFF</span><span>--color-pure-white</span>
+          <div style="background: var(--bg-primary); padding: var(--space-4); border: var(--border-width-hairline) solid var(--border-subtle); border-radius: var(--radius-xs);">
+            <div class="meta-mono text-energy">Mobile Slide Drawer</div>
+            <div class="body-sm text-secondary" style="margin-top: 6px;">
+              Accessible hamburger toggle, full-height slide-over drawer, Escape dismissal, and body scroll lock.
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Typography Scale -->
-    <section id="typography">
-      <div class="section-header">
-        <div>
-          <span class="meta-mono text-accent">// SECTION 3 TYPOGRAPHY SCALE</span>
-          <h2 class="heading-lg">Fluid Typographic System</h2>
-        </div>
-        <span class="meta-mono text-secondary">Syne / Inter / JetBrains Mono</span>
-      </div>
+    <!-- Anchors for Navigation Links (Verifying no broken navigation) -->
+    <div id="shop" style="scroll-margin-top: 100px;"></div>
+    <div id="new-arrivals" style="scroll-margin-top: 100px;"></div>
+    <div id="collections" style="scroll-margin-top: 100px;"></div>
+    <div id="best-sellers" style="scroll-margin-top: 100px;"></div>
+    <div id="lookbook" style="scroll-margin-top: 100px;"></div>
 
-      <div class="sandbox-panel" style="padding: 0;">
-        <div style="padding: var(--space-6) var(--space-8); border-bottom: var(--border-width-hairline) solid var(--border-subtle); display: grid; grid-template-columns: 220px 1fr; gap: var(--space-6); align-items: baseline;">
-          <div class="meta-mono text-muted">display-2xl (fluid clamp)</div>
-          <div class="display-2xl">LIGHTNING STRIKE</div>
-        </div>
-        <div style="padding: var(--space-6) var(--space-8); border-bottom: var(--border-width-hairline) solid var(--border-subtle); display: grid; grid-template-columns: 220px 1fr; gap: var(--space-6); align-items: baseline;">
-          <div class="meta-mono text-muted">display-xl (fluid clamp)</div>
-          <div class="display-xl">FORM AT THE SPEED OF LIGHT</div>
-        </div>
-        <div style="padding: var(--space-6) var(--space-8); border-bottom: var(--border-width-hairline) solid var(--border-subtle); display: grid; grid-template-columns: 220px 1fr; gap: var(--space-6); align-items: baseline;">
-          <div class="meta-mono text-muted">heading-lg</div>
-          <div class="heading-lg text-brand">HIGH-VELOCITY ARCHITECTURAL STREETWEAR</div>
-        </div>
-        <div style="padding: var(--space-6) var(--space-8); border-bottom: var(--border-width-hairline) solid var(--border-subtle); display: grid; grid-template-columns: 220px 1fr; gap: var(--space-6); align-items: baseline;">
-          <div class="meta-mono text-muted">body-base (15px / 1.55)</div>
-          <div class="body-base text-secondary">
-            Heavyweight 480GSM double-face cotton fleece engineered with a drop-shoulder drape and structural boxy profile. Infused with directional Flash Red detailing and nocturnal crimson depth.
-          </div>
-        </div>
-        <div style="padding: var(--space-6) var(--space-8); display: grid; grid-template-columns: 220px 1fr; gap: var(--space-6); align-items: baseline;">
-          <div class="meta-mono text-muted">meta-mono (11px / +0.18em)</div>
-          <div class="meta-mono text-accent">[EDITION_01 // ARCHIVE] &bull; COORD: 35.6762&deg; N, 139.6503&deg; E &bull; STATUS: IGNITED</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Spacing System -->
-    <section id="spacing">
-      <div class="section-header">
-        <div>
-          <span class="meta-mono text-accent">// SECTION 4 4px INCREMENT SCALE</span>
-          <h2 class="heading-lg">Spacing & Layout Scales</h2>
-        </div>
-        <span class="meta-mono text-secondary">Base 4px Increments</span>
-      </div>
-
-      <div class="sandbox-panel">
-        <div class="space-bar-wrap">
-          <span style="width: 120px; color: var(--text-secondary);">--space-1 (4px)</span>
-          <div class="space-bar" style="width: 4px;"></div>
-        </div>
-        <div class="space-bar-wrap">
-          <span style="width: 120px; color: var(--text-secondary);">--space-2 (8px)</span>
-          <div class="space-bar" style="width: 8px;"></div>
-        </div>
-        <div class="space-bar-wrap">
-          <span style="width: 120px; color: var(--text-secondary);">--space-3 (12px)</span>
-          <div class="space-bar" style="width: 12px;"></div>
-        </div>
-        <div class="space-bar-wrap">
-          <span style="width: 120px; color: var(--text-secondary);">--space-4 (16px)</span>
-          <div class="space-bar" style="width: 16px;"></div>
-        </div>
-        <div class="space-bar-wrap">
-          <span style="width: 120px; color: var(--text-secondary);">--space-6 (24px)</span>
-          <div class="space-bar" style="width: 24px;"></div>
-        </div>
-        <div class="space-bar-wrap">
-          <span style="width: 120px; color: var(--text-secondary);">--space-8 (32px)</span>
-          <div class="space-bar" style="width: 32px;"></div>
-        </div>
-        <div class="space-bar-wrap">
-          <span style="width: 120px; color: var(--text-secondary);">--space-12 (48px)</span>
-          <div class="space-bar" style="width: 48px;"></div>
-        </div>
-        <div class="space-bar-wrap">
-          <span style="width: 120px; color: var(--text-secondary);">--space-20 (80px)</span>
-          <div class="space-bar" style="width: 80px;"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Vector Assets -->
+    <!-- Master Logo Suite Reference -->
     <section id="logos">
       <div class="section-header">
         <div>
-          <span class="meta-mono text-accent">// VERIFIED PRODUCTION ASSETS</span>
-          <h2 class="heading-lg">Master Logo Suite</h2>
+          <span class="meta-mono text-accent">// BRAND ASSETS</span>
+          <h2 class="heading-lg">Master Vector Suite</h2>
         </div>
-        <span class="meta-mono text-secondary">10 Verified SVGs</span>
+        <span class="meta-mono text-secondary">Phase 01 Assets Preserved</span>
       </div>
 
       <div class="asset-grid">
@@ -577,17 +343,7 @@
           </div>
           <div class="asset-info">
             <div class="meta-mono" style="font-weight: 600; margin-bottom: 4px;">flashwear-wordmark-dark.svg</div>
-            <div class="body-sm text-secondary">Cloud White (#F5F5F5) for dark viewports & headers.</div>
-          </div>
-        </div>
-
-        <div class="asset-card">
-          <div class="asset-preview dark">
-            <img src="/public/assets/brand/flashwear-wordmark-red.svg" alt="Wordmark Red" style="max-width: 85%;">
-          </div>
-          <div class="asset-info">
-            <div class="meta-mono text-brand" style="font-weight: 600; margin-bottom: 4px;">flashwear-wordmark-red.svg</div>
-            <div class="body-sm text-secondary">Flash Red (#C41420) primary brand mark.</div>
+            <div class="body-sm text-secondary">Cloud White (#F5F5F5) desktop navigation mark.</div>
           </div>
         </div>
 
@@ -597,7 +353,7 @@
           </div>
           <div class="asset-info">
             <div class="meta-mono text-accent" style="font-weight: 600; margin-bottom: 4px;">flashwear-monogram-kinetic.svg</div>
-            <div class="body-sm text-secondary">FW Monogram with Red-to-Gold lightning shard.</div>
+            <div class="body-sm text-secondary">FW Monogram mobile navigation mark.</div>
           </div>
         </div>
 
@@ -616,20 +372,67 @@
 
   <div id="toast">Copied to clipboard</div>
 
-  <footer>
-    <div>FLASHWEAR DESIGN SYSTEM &bull; PHASE 02 COMPLETED</div>
-    <div>READY FOR PHASE 03 // BASELINE VALIDATED</div>
+  <footer class="showcase-footer">
+    <div>FLASHWEAR BRAND &bull; PHASE 04 COMPLETED</div>
+    <div>ANNOUNCEMENT &amp; MAIN NAVIGATION OPERATIONAL</div>
   </footer>
 
-  <script>
-    function copyToken(token, raw) {
-      navigator.clipboard.writeText(token).then(() => {
-        const toast = document.getElementById('toast');
-        toast.textContent = `COPIED ${token} (${raw})`;
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 2000);
-      });
+  <!-- ========================================================================
+       BOOTSTRAP LOGIC & LIVE INTERACTION CONTROLS
+       ======================================================================== -->
+  <script type="module">
+    import { app } from '/src/app/app.js';
+    import { store } from '/src/state/store.js';
+    import { data } from '/src/index.js';
+
+    // 1. Initialize Application Layout, Announcement Bar & Navigation
+    await app.init('#app');
+
+    // 2. Interactive Test Buttons
+    const toast = document.getElementById('toast');
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2000);
     }
+
+    // Add to Cart Test
+    document.getElementById('btn-test-add-cart')?.addEventListener('click', () => {
+      const hoodie = data.products[0];
+      store.addToCart(hoodie, 'L', 'Obsidian Black', 1);
+      showToast(`ADDED ${hoodie.name} (BAG: ${store.getCartCount()})`);
+    });
+
+    // Clear Cart Test
+    document.getElementById('btn-test-clear-cart')?.addEventListener('click', () => {
+      while (store.getCartCount() > 0) {
+        store.removeFromCart(0);
+      }
+      showToast('SHOPPING BAG CLEARED');
+    });
+
+    // Toggle Wishlist Test
+    document.getElementById('btn-test-toggle-wishlist')?.addEventListener('click', () => {
+      const isWishlisted = store.toggleWishlist('fw_prod_001');
+      showToast(isWishlisted ? 'ADDED HOODIE TO WISHLIST' : 'REMOVED HOODIE FROM WISHLIST');
+    });
+
+    // Open Mobile Drawer Test
+    document.getElementById('btn-test-open-mobile')?.addEventListener('click', () => {
+      if (app.mainNavigation && app.mainNavigation.mobileMenu) {
+        app.mainNavigation.mobileMenu.open();
+      }
+    });
+
+    // Reset Announcement Bar Test
+    document.getElementById('btn-test-reset-announcement')?.addEventListener('click', () => {
+      if (app.announcementBar) {
+        app.announcementBar.resetDismissal();
+        const slot = document.getElementById('fw-announcement-slot');
+        app.announcementBar.mount(slot);
+        showToast('ANNOUNCEMENT BAR RESTORED');
+      }
+    });
   </script>
 </body>
 </html>
